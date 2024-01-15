@@ -14,6 +14,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [279: Introduction to JSX and Babel](#279-introduction-to-jsx-and-babel)
   - [280: JSX Code Practice](#280-jsx-code-practice)
   - [281: Javascript Expressions in JSX \& ES6 Template Literals](#281-javascript-expressions-in-jsx--es6-template-literals)
+  - [282 Javascript Expressions in JSX Practice](#282-javascript-expressions-in-jsx-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -72,3 +73,14 @@ const name = "brese";
 ```
 
 [Expressions vs Statements video](https://www.youtube.com/watch?v=WVyCrI1cHi8&list=PL-xu4i_QDSxcoDNeh8rx5-pHCCTOg0XsI&ab_channel=Codexpanse)
+
+## 282 Javascript Expressions in JSX Practice
+
+1. Create a react app from scratch.
+2. It should display 2 paragraph HTML elements.
+3. The paragraphs should say:
+
+| Example                | Intended Behavior     |
+| ---------------------- | --------------------- |
+| Created by YOURNAME.   | Created by Angela Yu. |
+| Copyright CURRENTYEAR. | Copyright 2019.       |
