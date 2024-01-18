@@ -2,7 +2,7 @@
 
 This repository contains the course material for [The Complete 2024 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp). The course is divided into several sections, each of which is contained in a separate directory.
 
-**Create React App(CRA) has been discontinued and reccomend using Next.js instead**
+**Create React App(CRA) has been discontinued and recommend using Next.js instead**
 
 _React and ReactDOM have be updated to the latest version due to errors_
 
@@ -15,6 +15,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [280: JSX Code Practice](#280-jsx-code-practice)
   - [281: Javascript Expressions in JSX \& ES6 Template Literals](#281-javascript-expressions-in-jsx--es6-template-literals)
   - [282 Javascript Expressions in JSX Practice](#282-javascript-expressions-in-jsx-practice)
+- [283 JSX Attributes \& Styling React Elements](#283-jsx-attributes--styling-react-elements)
 
 ## 279: Introduction to JSX and Babel
 
@@ -84,3 +85,19 @@ const name = "brese";
 | ---------------------- | --------------------- |
 | Created by YOURNAME.   | Created by Angela Yu. |
 | Copyright CURRENTYEAR. | Copyright 2019.       |
+
+# 283 JSX Attributes & Styling React Elements
+
+Introduces styling the elements.
+
+```
+index.js
+<h1 className="heading">My Favorite Foods</h1>
+```
+
+```
+styles.css
+.heading {
+  color: red;
+}
+```
