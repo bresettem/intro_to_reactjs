@@ -14,8 +14,9 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [279: Introduction to JSX and Babel](#279-introduction-to-jsx-and-babel)
   - [280: JSX Code Practice](#280-jsx-code-practice)
   - [281: Javascript Expressions in JSX \& ES6 Template Literals](#281-javascript-expressions-in-jsx--es6-template-literals)
-  - [282 Javascript Expressions in JSX Practice](#282-javascript-expressions-in-jsx-practice)
-- [283 JSX Attributes \& Styling React Elements](#283-jsx-attributes--styling-react-elements)
+  - [282: Javascript Expressions in JSX Practice](#282-javascript-expressions-in-jsx-practice)
+  - [283: JSX Attributes \& Styling React Elements](#283-jsx-attributes--styling-react-elements)
+  - [284: Inline Styling for React Elements](#284-inline-styling-for-react-elements)
 
 ## 279: Introduction to JSX and Babel
 
@@ -75,7 +76,7 @@ const name = "brese";
 
 [Expressions vs Statements video](https://www.youtube.com/watch?v=WVyCrI1cHi8&list=PL-xu4i_QDSxcoDNeh8rx5-pHCCTOg0XsI&ab_channel=Codexpanse)
 
-## 282 Javascript Expressions in JSX Practice
+## 282: Javascript Expressions in JSX Practice
 
 1. Create a react app from scratch.
 2. It should display 2 paragraph HTML elements.
@@ -86,7 +87,7 @@ const name = "brese";
 | Created by YOURNAME.   | Created by Angela Yu. |
 | Copyright CURRENTYEAR. | Copyright 2019.       |
 
-# 283 JSX Attributes & Styling React Elements
+## 283: JSX Attributes & Styling React Elements
 
 Introduces styling the elements.
 
@@ -101,3 +102,46 @@ styles.css
   color: red;
 }
 ```
+
+## 284: Inline Styling for React Elements
+
+1. **Inline Styles Introduction:**
+
+   - Recap: Applying CSS with style sheets.
+   - Less common but useful: inline styles.
+
+2. **Using Inline Styles in JSX:**
+
+   - Starting project, fork it.
+   - JSX looks like HTML but needs a different approach.
+   - Mistake example: `<h1 style="color: "red;">Hello World!</h1>`
+     - Correct: `<h1 style={{ color: "red" }}>Hello World!</h1>`
+
+3. **JavaScript Object for Styling:**
+
+   - JSX expects a JavaScript object for style property.
+   - JavaScript objects: key-value pairs inside curly braces.
+   - Wrapping in JSX: double curly braces.
+     - Example: `<div style={{ fontSize: "20px", border: "1px solid black" }}>Content</div>`
+
+4. **Use Cases for Inline Styles:**
+
+   - Question: Why use inline styling over class-based styling?
+   - Inline styles for dynamic updates without JSX modification.
+
+5. **Dynamic Styling Example:**
+
+   - Constants for storing style objects.
+   - Updating styles on the fly without JSX modification.
+     - Example: `const customStyle = { color: "blue", fontSize: "20px", border: "1px solid black" };`
+     - Usage: `<div style={customStyle}>Dynamic Content</div>`
+     - Modification: `customStyle.color = "purple";`
+
+6. **Styling Properties in JSX:**
+
+   - CSS properties: kebab-case to camelCase conversion in JavaScript objects.
+   - Commas instead of semicolons in JavaScript objects.
+
+7. **Challenge and Practice:**
+   - Hands-on practice with CSS properties and JSX implementation.
+   - Emphasis on experimentation and understanding JSX syntax.
