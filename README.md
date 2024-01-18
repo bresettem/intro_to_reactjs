@@ -18,6 +18,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [283: JSX Attributes \& Styling React Elements](#283-jsx-attributes--styling-react-elements)
   - [284: Inline Styling for React Elements](#284-inline-styling-for-react-elements)
   - [285: React Styling Practice](#285-react-styling-practice)
+  - [286: React Components](#286-react-components)
 
 ## 279: Introduction to JSX and Babel
 
@@ -263,3 +264,39 @@ _React and ReactDOM have be updated to the latest version due to errors_
      - "Good morning" should have a red text color.
      - "Good afternoon" should have a green text color.
      - "Good evening" should have a blue text color.
+
+## 286: React Components
+
+1. Introduction to Components
+
+   - React components enable the organization of web applications into reusable and manageable parts.
+   - Improves code readability, maintainability, and reusability.
+
+2. Creating a Heading Component
+
+   - Demonstrated the process of creating a custom heading component in Pascal case (e.g., `Heading`).
+   - Utilized JSX to return HTML elements within the component.
+
+3. Organizing Components
+
+   - Explored the benefits of organizing components into separate files.
+   - Used ES6 import/export functionality for structuring component files.
+
+4. Practice with List Component
+
+   - Encouraged hands-on practice by creating a custom list component (`List`).
+   - Emphasized component export for use in other files.
+   - Implemented components in the main React code.
+
+5. Folder Structure
+
+   - Introduced the concept of a dedicated `components` folder for housing React components.
+   - Highlighted the importance of maintaining an organized file structure.
+
+6. Next Steps
+
+   - Discussed the common structure of React apps, featuring an `index.js` file rendering the main `App` component.
+   - Mentioned the possibility of further subdivision into subfolders for organization.
+
+7. Practical Application
+   - Provided a hands-on exercise for creating and structuring components in a real-world scenario.
