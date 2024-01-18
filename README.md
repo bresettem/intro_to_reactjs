@@ -17,6 +17,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [282: Javascript Expressions in JSX Practice](#282-javascript-expressions-in-jsx-practice)
   - [283: JSX Attributes \& Styling React Elements](#283-jsx-attributes--styling-react-elements)
   - [284: Inline Styling for React Elements](#284-inline-styling-for-react-elements)
+  - [285: React Styling Practice](#285-react-styling-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -239,3 +240,26 @@ _React and ReactDOM have be updated to the latest version due to errors_
 7. **Challenge and Practice:**
    - Hands-on practice with CSS properties and JSX implementation.
    - Emphasis on experimentation and understanding JSX syntax.
+
+## 285: React Styling Practice
+
+1. **Create a React App:**
+
+   - Start a new React app using your preferred setup method.
+
+2. **Display Greeting Based on Time:**
+
+   - Show a single `<h1>` element.
+   - If the current time is between midnight and 12 PM, display "Good morning."
+   - If the current time is between 12 PM and 6 PM, display "Good afternoon."
+   - If the current time is between 6 PM and midnight, display "Good evening."
+
+3. **Apply Styles:**
+
+   - Apply the "heading" style from the `styles.css` file to the `<h1>` element.
+
+4. **Change Text Color Dynamically:**
+   - Utilize inline CSS styles to dynamically change the color of the `<h1>` text based on the time of day.
+     - "Good morning" should have a red text color.
+     - "Good afternoon" should have a green text color.
+     - "Good evening" should have a blue text color.
