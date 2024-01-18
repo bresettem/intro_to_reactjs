@@ -20,19 +20,61 @@ _React and ReactDOM have be updated to the latest version due to errors_
 
 ## 279: Introduction to JSX and Babel
 
-This section introduces JSX and Babel.
+1. **Introduction: JSX in JavaScript Files**
 
-**JSX** is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file.
+   - It is a syntax extension for JavaScript that enables the incorporation of HTML-like markup directly into a JavaScript file.
+   - JSX allows seamless integration of HTML and JavaScript in React applications.
 
-```
-ReactDOM.render(
-  <div>
-    <h1>Hello, World!</h1>
-    <p>This is a paragraph.</p>
-  </div>,
-  document.getElementById("root")
-);
-```
+2. **Setting Up: JSX Introduction Sandbox**
+
+   - In the `index.js` file, require React and ReactDOM.
+     ```jsx
+     import React from "react";
+     import ReactDOM from "react-dom";
+     ```
+
+3. **Understanding JSX and Compilation**
+
+   - JSX undergoes compilation into JavaScript via Babel during React development.
+   - **Babel in React:** Babel operates as a transpiler, converting the latest JavaScript syntax into a version compatible with all browser environments.
+   - Babel ensures cross-browser support by transforming modern JavaScript into universally compatible code.
+
+4. **ES6 Features and Imports**
+
+   - Babel facilitates the use of ES6 features, promoting cleaner and more organized code.
+   - Import React and ReactDOM using the `import` statement for better modularization.
+
+5. **Rendering Multiple Elements with JSX**
+   - ReactDOM's render method supports a single HTML element.
+   - Wrap multiple elements within a single div for simultaneous rendering.
+     ```jsx
+     ReactDOM.render(
+       <div>
+         <h1>Hello, World!</h1>
+         <p>This is a paragraph.</p>
+       </div>,
+       document.getElementById("root")
+     );
+     ```
+6. **Challenge: Rendering Multiple Elements**
+
+   - Challenge to render an `<h2>` and two paragraphs inside a single div.
+   - Utilize the concept of wrapping elements inside a div for efficient rendering.
+     ```jsx
+     ReactDOM.render(
+       <div>
+         <h2>Hello, World!</h2>
+         <p>This is a paragraph.</p>
+         <p>This is another paragraph.</p>
+       </div>,
+       document.getElementById("root")
+     );
+     ```
+
+7. **Conclusion: Applying JSX Knowledge**
+   - Recap of JSX usage for HTML-JavaScript integration.
+   - Appreciation for Babel's role in compiling JSX and ensuring cross-browser compatibility.
+   - Introduction to ES6 features and modularization with import/export.
 
 **Babel** in react operates as a transpiler, converting the latest JavaScript syntax into a version that can run in all environments. This is done by converting the latest JavaScript syntax into an older version that is supported by all browsers.
 
@@ -45,63 +87,115 @@ ReactDOM.render(
 
 ## 281: Javascript Expressions in JSX & ES6 Template Literals
 
-Difference between expressions and statements. **Expressions** will be evaluated to a value and will equal something while **statements** are asking to do something.
+1. **Introduction: JSX in JavaScript Files**
 
-Statements are not allowed inside JSX. Only expressions
+   - JSX allows us to insert HTML into JavaScript files.
+   - We can also add HTML inside a JavaScript file and insert JavaScript inside that HTML. [Expressions vs Statements video](https://www.youtube.com/watch?v=WVyCrI1cHi8&list=PL-xu4i_QDSxcoDNeh8rx5-pHCCTOg0XsI&ab_channel=Codexpanse)
 
-```
-const name = "brese";
-ReactDOM.render(
+2. **Example: Rendering Lucky Number using JSX**
 
-  <div>
-    <h1>Hello {name}!</h1>
-    <p>My lucky number is {
-        if (name === "brese") {
-            return 7;
-        } else {
-            return 12;
-        }}.
-    </p>
-  </div>,
-  document.getElementById("root")
-);
-```
+   - Use JSX expression to render the lucky number in a paragraph element.
+     ```jsx
+     const luckyNumber = 7;
+     ReactDOM.render(
+       <p>Your lucky number is {luckyNumber}.</p>,
+       document.getElementById("root")
+     );
+     ```
 
-Expressions are only allowed such as
+3. **Deeper Dive: JSX and JavaScript Interaction**
 
-```
-const name = "brese";
-<h1>Hello {name}!</h1>
-```
+   - JSX allows adding JavaScript expressions inside HTML elements using curly braces.
+   - Expressions are evaluated to values, while statements cannot be used.
+   - Example using constants `firstName` and `lastName`:
 
-[Expressions vs Statements video](https://www.youtube.com/watch?v=WVyCrI1cHi8&list=PL-xu4i_QDSxcoDNeh8rx5-pHCCTOg0XsI&ab_channel=Codexpanse)
+     ```jsx
+     const firstName = 'Angela';
+     const lastName = 'Yu';
+
+     // Option 1: Concatenation
+     <h1>Hello {firstName + ' ' + lastName}</h1>
+
+     // Option 2: Separate curly braces
+     <h1>Hello {firstName} {lastName}</h1>
+
+     // Option 3: Template literals
+     <h1>{`Hello ${firstName} ${lastName}`}</h1>
+     ```
+
+4. **Practice: Inserting JavaScript Inside HTML**
+   - Exercise to practice inserting JavaScript inside HTML using JSX.
+   - Example:
+     ```jsx
+     const num = 7;
+     ReactDOM.render(
+       <div>
+         <p>Your lucky number is {num}.</p>
+       </div>,
+       document.getElementById("root")
+     );
+     ```
 
 ## 282: Javascript Expressions in JSX Practice
 
-1. Create a react app from scratch.
-2. It should display 2 paragraph HTML elements.
-3. The paragraphs should say:
+1. **Create a React App:**
 
-| Example                | Intended Behavior     |
-| ---------------------- | --------------------- |
-| Created by YOURNAME.   | Created by Angela Yu. |
-| Copyright CURRENTYEAR. | Copyright 2019.       |
+   - Start by creating a React app from scratch.
+
+2. **Display 2 Paragraphs:**
+
+   - Configure the app to display two HTML paragraph elements.
+
+3. **Paragraph Content:**
+
+   - Define the content for the paragraphs as follows:
+
+   | Example                | Intended Behavior     |
+   | ---------------------- | --------------------- |
+   | Created by YOURNAME.   | Created by Angela Yu. |
+   | Copyright CURRENTYEAR. | Copyright 2019.       |
 
 ## 283: JSX Attributes & Styling React Elements
 
-Introduces styling the elements.
+1. Use `className` instead of `class` in JSX to avoid warnings about invalid DOM property.
 
-```
-index.js
-<h1 className="heading">My Favorite Foods</h1>
-```
+   - Example: `<h1 className="heading">Hello World!</h1>`
 
-```
-styles.css
-.heading {
-  color: red;
-}
-```
+2. JSX attributes follow camelCase naming convention for multi-word attributes.
+
+   - Example: `<div contentEditable={true}>Editable Content</div>`
+
+3. Spellcheck attribute is camelCased in JSX.
+
+   - Example: `<h1 contentEditable={true} spellCheck={false}>Editable Content</h1>`
+
+4. Commonly used attribute for styling React elements is `className`, applied through CSS classes.
+
+   - Example: `<div className="food-img">Content</div>`
+
+5. JavaScript expressions can be used as attribute values in JSX.
+
+   - Example: `<img src={imgUrl + "?grayscale"} alt="Random Image" />`
+
+6. Include `alt` attribute for images to provide meaningful descriptions for accessibility.
+
+   - Example: `<img src={randomImg} alt="Random Image" />`
+
+7. Apply styling from `styles.css` to React elements.
+
+   - CSS in `styles.css`:
+     ```css
+     .heading {
+       color: red;
+     }
+     ```
+   - JSX Usage: `<h1 className="heading">Hello World!</h1>`
+
+8. Linter warnings can be addressed by adhering to best practices, such as adding `alt` text for images.
+
+9. Experiment with the provided code, delete and recreate to reinforce understanding of JSX attributes.
+
+10. Completed code for reference available in the course resources.
 
 ## 284: Inline Styling for React Elements
 
