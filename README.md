@@ -26,6 +26,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [290/291: Local Environment Setup for React Development](#290291-local-environment-setup-for-react-development)
   - [292: Newer Versions of Node Troubleshooting](#292-newer-versions-of-node-troubleshooting)
   - [293 Keeper App Project - Part 1 Challenge](#293-keeper-app-project---part-1-challenge)
+  - [294 Keeper App Project - Part 1 Solution](#294-keeper-app-project---part-1-solution)
 
 ## 279: Introduction to JSX and Babel
 
@@ -500,3 +501,57 @@ In this practice session, the goal was to separate the provided code into compon
 **Submission:**
 
 - Once the challenge is completed, proceed to the next lesson for the solution walkthrough.
+
+## 294 Keeper App Project - Part 1 Solution
+
+**Project Overview:**
+
+- _Project Name:_ Keeper App
+- _Components:_ App, Header, Note, Footer
+- [Solution](https://l1pp6.csb.app/)
+
+  **Solution Walkthrough:**
+
+**1. Setup Project:**
+
+- Choose CodeSandbox or set up locally (unzip project folder, run `npm install`, then `npm start`).
+
+**2. Component Hierarchy:**
+
+- Created a new React app with components: `App`, `Header`, `Note`, `Footer`.
+
+**3. Header Component:**
+
+- Implemented `Header` component inside `App`.
+- Displayed the app title in an `h1` element.
+
+**4. Note Component:**
+
+- Created a `Note` component with title and content.
+- Included sample notes inside `App` using `Note` component.
+- Applied styling by adding the `note` class to the wrapping `div` element.
+
+**5. Footer Component:**
+
+- Implemented `Footer` component inside `App`.
+- Displayed the current year dynamically using JavaScript's `Date` object.
+- Applied styling based on the targeted classes in `styles.css`.
+
+**6. Styling:**
+
+- Ensured the styling matched the provided sample completed app.
+- Checked targeted classes and HTML elements in `styles.css` for styling.
+
+**7. Customization (Optional):**
+
+- Experimented with custom styles or created a new `styles.css` for customization.
+
+**8. Testing:**
+
+- Verified proper rendering of components and dynamic year in the footer.
+
+**Conclusion:**
+
+- Checked the final website against the sample completed app to ensure similarity.
+- Encouraged playing around with the code for better understanding.
+- Prepared for the next lesson on React properties.
