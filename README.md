@@ -19,6 +19,10 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [284: Inline Styling for React Elements](#284-inline-styling-for-react-elements)
   - [285: React Styling Practice](#285-react-styling-practice)
   - [286: React Components](#286-react-components)
+  - [287: React Components Practice](#287-react-components-practice)
+  - [288: Javascript ES6 - Import, Export, and Modules](#288-javascript-es6---import-export-and-modules)
+  - [Node.js require vs ES6 import/export](#nodejs-require-vs-es6-importexport)
+  - [289: Javascript ES6 Import, Export, and Modules Practice](#289-javascript-es6-import-export-and-modules-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -300,3 +304,84 @@ _React and ReactDOM have be updated to the latest version due to errors_
 
 7. Practical Application
    - Provided a hands-on exercise for creating and structuring components in a real-world scenario.
+
+## 287: React Components Practice
+
+In this practice session, the goal was to separate the provided code into components, resulting in an `index.js` file rendering a custom `App` component. The main steps involved creating a `Heading.jsx` file to handle the heading logic and styling, and an `App.jsx` file to serve as the main component tree.
+
+## 288: Javascript ES6 - Import, Export, and Modules
+
+1. **Introduction**
+
+   - Clarification on the `import` and `export` keywords in ES6.
+   - Brief overview of the importance of modules in managing code complexity.
+
+2. **Creating a Module: math.js**
+
+   - Introduction of a simple JavaScript file, `math.js`, with a constant `pi` (3.1415962).
+   - Exploration of how to export values from a module using `export default`.
+   - Addition of `doublePi` and `triplePi` functions as non-default exports.
+
+3. **Importing from math.js**
+
+   - In `index.js`, importing values from `math.js` using `import`.
+   - Demonstration of importing the default export (pi), and named exports (doublePi, triplePi).
+   - Clarification on naming flexibility when importing the default export.
+
+4. **Wildcard Import**
+
+   - Introduction of wildcard import using the asterisk (`*`).
+   - Usage of wildcard import to access all exports from `math.js`.
+   - `import * as pi from "./math.js";`
+   - Discussion on the drawbacks of wildcard imports, such as loss of clarity.
+
+5. **Best Practices and Conclusion**
+
+   - Encouragement for explicit imports rather than wildcard imports for better code clarity.
+   - Mention of browser compatibility and the use of Babel for ES6 transpilation.
+   - Recap of the benefits of modular code and separation of concerns.
+
+6. **Closing Remarks**
+   - Emphasis on the importance of modular code and the role of import/export in achieving modularity.
+   - Preparation for the practice challenge in the next lesson.
+
+## Node.js require vs ES6 import/export
+
+- **Node.js `require`:**
+
+  - Traditional, older way of importing modules.
+  - Works in Node.js by default.
+  - Used `require` to bring in functionalities.
+  - Interoperable with CommonJS modules.
+  - Dynamically loads modules when needed.
+  - File extensions like `.js` are common.
+
+- **ES6 `import/export`:**
+
+  - Modern, cleaner syntax for module handling.
+  - Supported in Node.js from version 12 onwards.
+  - Uses `import` to bring in functionalities.
+  - Encouraged for clarity and consistency.
+  - Supports dynamic loading with `import()` using promises.
+  - File extensions like `.mjs` or `"type": "module"` in `package.json`.
+
+- **Key Points:**
+  - `require` is older, `import` is newer and more standard.
+  - ES6 `import` is considered cleaner and more readable.
+  - Both can coexist, but `import` is preferred for modern projects.
+
+## 289: Javascript ES6 Import, Export, and Modules Practice
+
+1. **Challenge Overview**
+
+   - Task: Import functions from `calculator.js` to calculate numbers for display.
+   - Expected Result: Achieve the same display as shown in `Final.png` with calculated numbers.
+
+2. **Alternative Import Methods**
+
+   - Emphasis on understanding different import methods (separate imports vs. wildcard imports).
+   - Encouragement to experiment with both methods to build confidence.
+
+3. **Closing Notes**
+   - Reiteration of the importance of understanding import/export for future React development.
+   - Invitation to join the next lesson on setting up a local environment for React development.
