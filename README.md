@@ -25,6 +25,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [289: Javascript ES6 Import, Export, and Modules Practice](#289-javascript-es6-import-export-and-modules-practice)
   - [290/291: Local Environment Setup for React Development](#290291-local-environment-setup-for-react-development)
   - [292: Newer Versions of Node Troubleshooting](#292-newer-versions-of-node-troubleshooting)
+  - [293 Keeper App Project - Part 1 Challenge](#293-keeper-app-project---part-1-challenge)
 
 ## 279: Introduction to JSX and Babel
 
@@ -443,3 +444,59 @@ In this practice session, the goal was to separate the provided code into compon
 6. **Closing Note**
    - Encouragement: Encourage students to use the provided tool if they encounter compatibility issues.
    - Flexibility: Mention that using such tools showcases adaptability in a dynamic development environment.
+
+## 293 Keeper App Project - Part 1 Challenge
+
+**Project Overview:**
+
+- **Project Name:** Keeper App Part 1
+- **Components:** App, Header, Note, Footer
+
+**Instructions:**
+
+1. **Setup Project:**
+
+   - Choose to work on CodeSandbox or set up locally using provided resources.
+   - For local setup, unzip the provided project folder, navigate to it, and run `npm install`.
+   - Start the server with `npm start` and access the app on `localhost:3000`.
+
+2. **Component Hierarchy:**
+
+   - Create a new React app with the following components:
+     - `App`: Parent component.
+     - `Header`: Displays the app title (e.g., "Keeper App").
+     - `Note`: Represents a note with title and content.
+     - `Footer`: Displays the current year dynamically.
+
+3. **Header Component:**
+
+   - Implement the `Header` component inside `App`.
+   - Display the title of the app (e.g., "Keeper App").
+
+4. **Note Component:**
+
+   - Create a `Note` component with a title and content.
+   - Include sample notes inside `App` using `Note` component.
+
+5. **Footer Component:**
+
+   - Implement the `Footer` component inside `App`.
+   - Display the current year dynamically using JavaScript's date.
+
+6. **Styling:**
+
+   - Ensure the styling matches the provided sample completed app.
+   - Inspect `styles.css` for targeted classes and HTML elements for styling.
+
+7. **Customization (Optional):**
+
+   - Customize styles or create your own `styles.css` if desired.
+   - Experiment with different designs to make the app unique.
+
+8. **Testing:**
+   - Verify that the app functions as intended.
+   - Check for proper rendering of components and dynamic year in the footer.
+
+**Submission:**
+
+- Once the challenge is completed, proceed to the next lesson for the solution walkthrough.
