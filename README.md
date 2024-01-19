@@ -23,7 +23,8 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [288: Javascript ES6 - Import, Export, and Modules](#288-javascript-es6---import-export-and-modules)
   - [Node.js require vs ES6 import/export](#nodejs-require-vs-es6-importexport)
   - [289: Javascript ES6 Import, Export, and Modules Practice](#289-javascript-es6-import-export-and-modules-practice)
-  - [290/291 Local Environment Setup for React Development](#290291-local-environment-setup-for-react-development)
+  - [290/291: Local Environment Setup for React Development](#290291-local-environment-setup-for-react-development)
+  - [292: Newer Versions of Node Troubleshooting](#292-newer-versions-of-node-troubleshooting)
 
 ## 279: Introduction to JSX and Babel
 
@@ -387,7 +388,7 @@ In this practice session, the goal was to separate the provided code into compon
    - Reiteration of the importance of understanding import/export for future React development.
    - Invitation to join the next lesson on setting up a local environment for React development.
 
-## 290/291 Local Environment Setup for React Development
+## 290/291: Local Environment Setup for React Development
 
 - View the necessary resources to get started
   - [Install nodejs](https://nodejs.org/en)
@@ -396,3 +397,49 @@ In this practice session, the goal was to separate the provided code into compon
   - [Sublime-Babel-VSCode](https://github.com/joshpeng/Sublime-Babel-VSCode)
   - [React docs](https://react.dev/)
     - [React community](https://react.dev/community)
+
+## 292: Newer Versions of Node Troubleshooting
+
+1. **Node Version Compatibility**
+
+   - Acknowledgment: Some students may have higher Node versions than those in the videos.
+   - Caution: Compatibility issues with listed dependencies in starting files may arise.
+
+2. **Using npm-check-updates**
+
+   - Package: Introduce `npm-check-updates` as a tool to update dependency versions.
+   - Installation:
+     ```bash
+     npm install -g npm-check-updates
+     ```
+   - Updating Dependencies:
+     ```bash
+     ncu -u
+     ```
+   - Installing Updated Versions:
+     ```bash
+     npm install
+     ```
+   - Starting the Project:
+     ```bash
+     npm start
+     ```
+
+3. **Ensuring Compatibility**
+
+   - Explanation: The process ensures compatibility by updating dependency versions.
+   - Note: Run the commands in the specified order to prevent potential issues.
+
+4. **npm-check-updates (ncu) in Action**
+
+   - Demonstration: Walkthrough of using `ncu` to check and update dependencies.
+   - Visual cue: Show how the tool modifies `package.json` to reflect updated versions.
+
+5. **Running npm install and npm start**
+
+   - Execution: After updating dependencies, emphasize the importance of running `npm install` and `npm start`.
+   - Reminder: This ensures that the project is set up with the updated dependencies.
+
+6. **Closing Note**
+   - Encouragement: Encourage students to use the provided tool if they encounter compatibility issues.
+   - Flexibility: Mention that using such tools showcases adaptability in a dynamic development environment.
