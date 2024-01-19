@@ -23,6 +23,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [288: Javascript ES6 - Import, Export, and Modules](#288-javascript-es6---import-export-and-modules)
   - [Node.js require vs ES6 import/export](#nodejs-require-vs-es6-importexport)
   - [289: Javascript ES6 Import, Export, and Modules Practice](#289-javascript-es6-import-export-and-modules-practice)
+  - [290/291 Local Environment Setup for React Development](#290291-local-environment-setup-for-react-development)
 
 ## 279: Introduction to JSX and Babel
 
@@ -385,3 +386,13 @@ In this practice session, the goal was to separate the provided code into compon
 3. **Closing Notes**
    - Reiteration of the importance of understanding import/export for future React development.
    - Invitation to join the next lesson on setting up a local environment for React development.
+
+## 290/291 Local Environment Setup for React Development
+
+- View the necessary resources to get started
+  - [Install nodejs](https://nodejs.org/en)
+  - [Install Visual Studio Code](https://code.visualstudio.com/)
+  - [Babeljs](https://babeljs.io/docs/editors)
+  - [Sublime-Babel-VSCode](https://github.com/joshpeng/Sublime-Babel-VSCode)
+  - [React docs](https://react.dev/)
+    - [React community](https://react.dev/community)

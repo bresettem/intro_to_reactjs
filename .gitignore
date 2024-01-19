@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# To ignore other .gitignore files while using create-react-app
+.gitignore
