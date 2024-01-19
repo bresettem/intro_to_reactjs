@@ -27,6 +27,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [292: Newer Versions of Node Troubleshooting](#292-newer-versions-of-node-troubleshooting)
   - [293 Keeper App Project - Part 1 Challenge](#293-keeper-app-project---part-1-challenge)
   - [294 Keeper App Project - Part 1 Solution](#294-keeper-app-project---part-1-solution)
+  - [295: React Props](#295-react-props)
 
 ## 279: Introduction to JSX and Babel
 
@@ -555,3 +556,34 @@ In this practice session, the goal was to separate the provided code into compon
 - Checked the final website against the sample completed app to ensure similarity.
 - Encouraged playing around with the code for better understanding.
 - Prepared for the next lesson on React properties.
+
+## 295: React Props
+
+**React Components and Props Overview**
+
+In this lesson, we delved into the concept of React components and explored the usage of props to make components more dynamic and reusable.
+
+1. **Components:**
+
+   - React components allow us to create modular and reusable pieces of UI.
+   - We started by identifying a use case for components, particularly when dealing with repetitive code.
+
+2. **Props (Properties):**
+
+   - Props are a way to pass custom data to a React component.
+   - We compared the concept of attributes in HTML to properties (props) in React.
+   - Props are passed to components as an object, allowing customization of the component's behavior and content.
+
+3. **Working with Props:**
+
+   - Props are accessed within a component using the `props` object.
+   - We demonstrated how to pass and access props in a React component using examples.
+
+4. **Reusability:**
+   - Leveraged the power of props to create a reusable `Card` component.
+   - Demonstrated how different instances of the `Card` component can be created with unique data.
+
+**Next Steps:**
+
+- The understanding of components and props is foundational for building more complex React applications.
+- The upcoming lesson will provide a challenge to solidify your understanding and apply these concepts in a practical scenario.
