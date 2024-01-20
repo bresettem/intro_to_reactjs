@@ -28,6 +28,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [293 Keeper App Project - Part 1 Challenge](#293-keeper-app-project---part-1-challenge)
   - [294 Keeper App Project - Part 1 Solution](#294-keeper-app-project---part-1-solution)
   - [295: React Props](#295-react-props)
+  - [296: React Props Practice](#296-react-props-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -587,3 +588,40 @@ In this lesson, we delved into the concept of React components and explored the 
 
 - The understanding of components and props is foundational for building more complex React applications.
 - The upcoming lesson will provide a challenge to solidify your understanding and apply these concepts in a practical scenario.
+
+## 296: React Props Practice
+
+In this lesson, we applied our knowledge of React components and props to complete a series of challenges and build a contact list app. Let's walk through the solution step by step.
+
+**Step 1: Apply CSS Styles**
+
+- Reviewed the `styles.css` file to find appropriate class names.
+- Applied styles to `App.jsx` to match the desired appearance.
+  - Used class "name" for the contact name.
+  - Applied class "circle-image" for a circular avatar image.
+  - Added class "info" to paragraphs for consistent styling.
+
+**Step 2: Extract Contact Card as a Reusable Component**
+
+- Created a new file, `Card.jsx`, inside the components folder.
+- Extracted the contents of the contact card into the Card component.
+- Exported the Card component as the default export.
+
+**Step 3: Use Props to Render Default Beyonce Card**
+
+- In `App.jsx,` imported the Card component.
+- Passed custom data (name, image, tel, email) to the Card component as props.
+- Updated Card component to use props for dynamic content.
+
+**Step 4: Use contacts.js to Populate Cards**
+
+- Use the provided contacts.js filled with an array of contact objects.
+- Exported the contacts array as the default export.
+- In App.jsx, imported the contacts array.
+- Used array elements to dynamically populate the Card components.
+
+**Conclusion:**
+
+- Successfully created a contact list app with reusable Card components.
+- Applied styling and dynamic data using React props.
+- Gained experience in structuring components and passing data between them.
