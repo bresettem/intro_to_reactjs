@@ -29,6 +29,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [294 Keeper App Project - Part 1 Solution](#294-keeper-app-project---part-1-solution)
   - [295: React Props](#295-react-props)
   - [296: React Props Practice](#296-react-props-practice)
+  - [297: React DevTools](#297-react-devtools)
 
 ## 279: Introduction to JSX and Babel
 
@@ -625,3 +626,45 @@ In this lesson, we applied our knowledge of React components and props to comple
 - Successfully created a contact list app with reusable Card components.
 - Applied styling and dynamic data using React props.
 - Gained experience in structuring components and passing data between them.
+
+## 297: React DevTools
+
+In this lesson, we learned how to further modularize a React app by separating components and using the React Developer Tools for debugging.
+
+**1. Extracting Components:**
+
+- Recognized opportunities for creating reusable components, e.g., Avatar component for circular images.
+- Demonstrated the process of creating a new Avatar component and integrating it into the Card component.
+- Explored passing props through multiple levels of components.
+
+**2. Using React Developer Tools:**
+
+- Explored the React Developer Tools within CodeSandbox, providing insights into the component tree and props.
+- Showed how to inspect props of individual components using React DevTools.
+- Recommended installing the React Developer Tools browser extension for enhanced functionality.
+
+**3. Debugging with React DevTools:**
+
+- Illustrated how React DevTools help identify and fix issues, such as incorrect prop names.
+- Emphasized the importance of inspecting components and props for efficient debugging.
+- Introduced the ability to modify props in the DevTools for testing and debugging.
+
+**4. Challenge - Creating Detail Component:**
+
+- Presented a challenge to create a Detail component to replace repetitive paragraph tags.
+- Emphasized the use of props and React DevTools to ensure proper integration.
+
+**5. Component Reusability:**
+
+- Highlighted the power of React in creating a palette of reusable components.
+- Demonstrated how components can be easily imported and customized with different props.
+
+**6. Previewing Components in Other Websites:**
+
+- Showcased the ability of React DevTools to inspect and understand React components on other websites.
+
+**Conclusion:**
+
+- Explored the benefits of modularization and component reuse in React.
+- Utilized React DevTools to enhance the debugging and development process.
+- Gained insights into creating a structured component tree for easier management.
