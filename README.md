@@ -32,6 +32,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [297: React DevTools](#297-react-devtools)
   - [298: Mapping Data to Components](#298-mapping-data-to-components)
   - [299: Mapping Data to Components Practice](#299-mapping-data-to-components-practice)
+  - [300: Javascript ES6 Map/Filter/Reduce](#300-javascript-es6-mapfilterreduce)
 
 ## 279: Introduction to JSX and Babel
 
@@ -780,3 +781,104 @@ In this challenge, you were tasked with applying the knowledge of mapping compon
 - Applied the concept of mapping components in React to dynamically render content.
 - Extracted repeated structures into a separate component for better organization and reusability.
 - Used props to pass data dynamically and achieve a clean, efficient solution.
+
+## 300: Javascript ES6 Map/Filter/Reduce
+
+**References**
+
+- [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+- [Find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [FindIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findindex)
+- [Substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [Javascript ES6 Map/Filter/Reduce]()
+- [Map/Filter/Reduce Practice](https://codesandbox.io/p/sandbox/mapfilterreduce-h7sm6)
+  - [Solution](https://codesandbox.io/p/sandbox/mapfilterreduce-completed-3sm6u)
+
+In this lesson, we delved into array functions in JavaScript, exploring the `map`, `filter`, `reduce`, `find`, and `findIndex` functions. Here's a summary of the key points:
+
+**1. Introduction to `map` Function:**
+
+- Demonstrated the use of the `map` function to loop through an array and create a new array by applying a specified function to each item.
+- Compared the concise syntax of `map` with the traditional use of `forEach` for a similar purpose.
+
+  ```jsx
+  // Create a new array by doing something with each item in an array.
+  const newNumbers = numbers.map(function (x) {
+    return x * 2;
+  });
+  console.log("newNumbers", newNumbers); // [ 6, 112, 4, 96, 10 ]
+  ```
+
+**2. `filter` Function:**
+
+- Introduced the `filter` function, which creates a new array by retaining only the items that meet a specified condition.
+- Showed how to filter an array based on a condition, such as keeping numbers greater than 10.
+
+  ```jsx
+  // Filter - Create a new array by keeping the items that return true.
+  const filteredNumbers = numbers.filter(function (num) {
+    return num > 10;
+  });
+
+  console.log("filteredNumbers", filteredNumbers); // [56, 48]
+  ```
+
+**3. `reduce` Function:**
+
+- Explained the `reduce` function, used to accumulate values and perform an operation on each item in an array.
+- Demonstrated how to sum up all the items in an array using `reduce`.
+
+  ```jsx
+  //Reduce - Accumulate a value by doing something to each item in an array.
+  let newNumber = numbers.reduce(function (accumulator, currentNumber) {
+    return accumulator + currentNumber;
+  });
+  console.log("reduce", newNumber); // 114
+  ```
+
+  **4. `find` and `findIndex` Functions:**
+
+- Introduced the `find` function, which retrieves the first item in an array that satisfies a specified condition.
+- Explored the `findIndex` function, which returns the index of the first item that matches a condition.
+
+  ```jsx
+  //Find - find the first item that matches from an array.
+
+  let findNumber = numbers.find(function (num) {
+    return num > 10;
+  });
+  console.log("findNumber", findNumber); // 56
+
+  //FindIndex - find the index of the first item that matches.
+  let findIndex = numbers.findIndex(function (num) {
+    return num > 10;
+  });
+  console.log("findIndex", findIndex); // 1
+  ```
+
+**5. Challenge - Manipulating Emoji Data:**
+
+- Presented a challenge involving the manipulation of an array of emoji objects (`emojipedia`).
+- Required using the `map` function to extract and truncate the `meaning` property to a maximum of 100 characters.
+
+**6. Solution to Challenge:**
+
+- Provided a step-by-step solution to the challenge, using the `map` function to create a new array with truncated meanings.
+
+  ```jsx
+  const reduced = emojis.map(function (emojiEntry) {
+    return emojiEntry.meaning.substring(0, 100);
+  });
+
+  console.log("reduced", reduced);
+
+  //["“You can do that!” or “I feel strong!” Arm with tense biceps. Also used in connection with doing spo",
+  //  "Two hands pressed together. Is currently very introverted, saying a prayer, or hoping for enlightenm",
+  // "This is funny! A smiley face, rolling on the floor, laughing. The face is laughing boundlessly. The ";]
+  ```
+
+**7. Conclusion and Next Lesson Preview:**
+
+- Emphasized understanding over memorization for array functions.
