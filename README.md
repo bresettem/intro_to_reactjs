@@ -25,11 +25,12 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [289: Javascript ES6 Import, Export, and Modules Practice](#289-javascript-es6-import-export-and-modules-practice)
   - [290/291: Local Environment Setup for React Development](#290291-local-environment-setup-for-react-development)
   - [292: Newer Versions of Node Troubleshooting](#292-newer-versions-of-node-troubleshooting)
-  - [293 Keeper App Project - Part 1 Challenge](#293-keeper-app-project---part-1-challenge)
-  - [294 Keeper App Project - Part 1 Solution](#294-keeper-app-project---part-1-solution)
+  - [293: Keeper App Project - Part 1 Challenge](#293-keeper-app-project---part-1-challenge)
+  - [294: Keeper App Project - Part 1 Solution](#294-keeper-app-project---part-1-solution)
   - [295: React Props](#295-react-props)
   - [296: React Props Practice](#296-react-props-practice)
   - [297: React DevTools](#297-react-devtools)
+  - [298: Mapping Data to Components](#298-mapping-data-to-components)
 
 ## 279: Introduction to JSX and Babel
 
@@ -449,7 +450,7 @@ In this practice session, the goal was to separate the provided code into compon
    - Encouragement: Encourage students to use the provided tool if they encounter compatibility issues.
    - Flexibility: Mention that using such tools showcases adaptability in a dynamic development environment.
 
-## 293 Keeper App Project - Part 1 Challenge
+## 293: Keeper App Project - Part 1 Challenge
 
 **Project Overview:**
 
@@ -505,7 +506,7 @@ In this practice session, the goal was to separate the provided code into compon
 
 - Once the challenge is completed, proceed to the next lesson for the solution walkthrough.
 
-## 294 Keeper App Project - Part 1 Solution
+## 294: Keeper App Project - Part 1 Solution
 
 **Project Overview:**
 
@@ -668,3 +669,59 @@ In this lesson, we learned how to further modularize a React app by separating c
 - Explored the benefits of modularization and component reuse in React.
 - Utilized React DevTools to enhance the debugging and development process.
 - Gained insights into creating a structured component tree for easier management.
+
+## 298: Mapping Data to Components
+
+In this lesson, we explored the technique of mapping components in React to eliminate repetitive code and dynamically generate components based on data.
+
+**1. Introduction to Mapping Components:**
+
+- Identified the repetitive code in App.jsx when creating Card components for each contact.
+- Introduced the concept of mapping components to handle arrays of data more efficiently.
+
+**2. Using the `map` Function:**
+
+- Demonstrated the use of the `map` function in JavaScript for iterating over an array.
+- Showed how to apply the `map` function to the `contacts` array, creating a new Card component for each contact.
+
+**3. Creating a Function for Mapping:**
+
+- Introduced the concept of passing a function into the `map` function to customize the creation of components.
+- Created the `createCard` function to generate Card components based on contact data.
+  ```jsx
+   function createCard(contact) {
+      return (
+         <Card
+            key={contact.id}
+            id={contact.id}
+            name={contact.name}
+            img={contact.imgURL}
+            tel={contact.phone}
+            email={contact.email}
+         />
+      );
+      }
+   ...
+   {contacts.map(createCard)}
+  ```
+
+**4. Handling Unique Keys:**
+
+- Addressed the importance of providing a unique `key` prop for each dynamically created component.
+- Used the `id` property from the `contacts` array as the `key` prop to resolve the warning.
+
+**5. Challenge - Displaying ID as a Paragraph:**
+
+- Presented a challenge to display the `id` property of each contact as a paragraph above the Card component.
+- Emphasized the need to use a separate prop for accessing `id` as the `key` prop is not accessible.
+
+**6. Debugging with React DevTools:**
+
+- Explored debugging challenges, highlighting the limitations of accessing the `key` prop directly.
+- Encouraged the use of React DevTools for inspecting components and understanding props.
+
+**7. Conclusion:**
+
+- Understood the benefits of mapping components for dynamic rendering.
+- Learned how to create a function for mapping components and customize their properties.
+- Explored the importance of unique `key` props and addressed potential challenges.
