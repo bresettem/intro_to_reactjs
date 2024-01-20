@@ -31,6 +31,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [296: React Props Practice](#296-react-props-practice)
   - [297: React DevTools](#297-react-devtools)
   - [298: Mapping Data to Components](#298-mapping-data-to-components)
+  - [299: Mapping Data to Components Practice](#299-mapping-data-to-components-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -725,3 +726,57 @@ In this lesson, we explored the technique of mapping components in React to elim
 - Understood the benefits of mapping components for dynamic rendering.
 - Learned how to create a function for mapping components and customize their properties.
 - Explored the importance of unique `key` props and addressed potential challenges.
+
+## 299: Mapping Data to Components Practice
+
+**References**
+
+- [Mapping Data to Components Practice](https://codesandbox.io/p/sandbox/mapping-components-practice-6fkfr)
+  - [Solution](https://codesandbox.io/p/sandbox/mapping-components-practice-completed-37h04)
+- [Emoji Meanings](https://www.emojimeanings.net/list-smileys-people-whatsapp)
+- [Description List Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
+
+**React Challenge - Emoji Dictionary**
+
+In this challenge, you were tasked with applying the knowledge of mapping components in React to create a beautiful emoji dictionary. Here's a summary of the key steps and solutions:
+
+**Challenge Overview:**
+
+1. Create a new component called `Entry.jsx` to represent the repeated structure of each emoji entry.
+2. Add props (`emoji`, `name`, `description`) to make the `Entry` component reusable.
+3. Import the `emojipedia` array from `emojipedia.js` in the `App.js` file.
+4. Map through the `emojipedia` array and render the `Entry` components dynamically.
+
+**Solution Steps:**
+
+1. **Create `Entry.jsx`:**
+
+   - Create a new component named `Entry.jsx` and move the repeated structure (div with class `term`) into it.
+   - Export the `Entry` component.
+
+2. **Add Props to `Entry` Component:**
+
+   - Add props (`emoji`, `name`, `description`) to the `Entry` component.
+   - Replace hardcoded data with props inside the `Entry` component.
+
+3. **Import `emojipedia` in `App.js`:**
+
+   - Export the `emojipedia` array from `emojipedia.js`.
+   - Import the `emojipedia` array into `App.js`.
+
+4. **Map through `emojipedia` and Render `Entry` Components:**
+   - Use the `map` function on the `emojipedia` array in the `App.js` file.
+   - Create a function (`createEntry`) to handle the creation of `Entry` components.
+   - Pass the function as an argument to the `map` function, allowing dynamic rendering.
+   - Utilize props (`emojiTerm.id`, `emojiTerm.emoji`, `emojiTerm.name`, `emojiTerm.meaning`) for each entry.
+
+**Final Outcome:**
+
+- The `Entry` component is now a reusable component with props for emoji data.
+- The `emojipedia` array is dynamically mapped to render multiple `Entry` components.
+
+**Learning Points:**
+
+- Applied the concept of mapping components in React to dynamically render content.
+- Extracted repeated structures into a separate component for better organization and reusability.
+- Used props to pass data dynamically and achieve a clean, efficient solution.
