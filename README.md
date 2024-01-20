@@ -33,6 +33,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [298: Mapping Data to Components](#298-mapping-data-to-components)
   - [299: Mapping Data to Components Practice](#299-mapping-data-to-components-practice)
   - [300: Javascript ES6 Map/Filter/Reduce](#300-javascript-es6-mapfilterreduce)
+  - [301: Javascript ES6 Arrow Functions](#301-javascript-es6-arrow-functions)
 
 ## 279: Introduction to JSX and Babel
 
@@ -882,3 +883,44 @@ In this lesson, we delved into array functions in JavaScript, exploring the `map
 **7. Conclusion and Next Lesson Preview:**
 
 - Emphasized understanding over memorization for array functions.
+
+## 301: Javascript ES6 Arrow Functions
+
+**References:**
+
+- [ES6 Arrow Functions Practice](https://codesandbox.io/p/sandbox/es6-arrow-functions-y8jhk)
+  - [Solution](https://codesandbox.io/p/sandbox/es6-arrow-functions-completed-gbtv7)
+- [Arrow Functions](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
+
+**1. Arrow Function Syntax:**
+
+- Arrow functions provide a concise and shorter way of writing JavaScript functions.
+- The basic syntax involves replacing the `function` keyword with a fat arrow (`=>`).
+- For a single-line expression, the curly braces and `return` keyword can be omitted.
+
+**2. Single Parameter and No Parameters:**
+
+- If a function has a single parameter, the parentheses around the parameter can be omitted.
+- For functions with no parameters, or more than one parameter, parentheses are required.
+
+**3. Pros and Cons:**
+
+- Arrow functions can enhance code readability and brevity.
+- Consideration should be given to team familiarity, project requirements, and individual comfort with the syntax.
+- Arrow functions are commonly used in React, especially within array functions like `map`, `filter`, and `reduce`.
+
+**4. Challenge: Convert Functions to Arrow Functions:**
+
+- Provided a challenge to convert existing functions (map, filter, reduce, find, find index) to arrow functions.
+- Demonstrated the process of simplifying the syntax, removing unnecessary elements, and maintaining clarity.
+
+**5. Applying Arrow Functions in React Code:**
+
+- Applied arrow functions in a React component (`App.jsx`), specifically within the `createEntry` function used in mapping emoji terms to props.
+- Showed the step-by-step conversion, emphasizing the elimination of unnecessary syntax for concise code.
+
+**6. Additional Resources:**
+
+- Referenced a Mozilla article on arrow functions for a deeper understanding of their history and usage.
+
+In the next lesson, we will return to React coding after leveling up our JavaScript skills with arrow functions. Stay tuned for more React development insights and practices.
