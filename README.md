@@ -34,6 +34,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [299: Mapping Data to Components Practice](#299-mapping-data-to-components-practice)
   - [300: Javascript ES6 Map/Filter/Reduce](#300-javascript-es6-mapfilterreduce)
   - [301: Javascript ES6 Arrow Functions](#301-javascript-es6-arrow-functions)
+  - [302: Keeper App Project - Part 2](#302-keeper-app-project---part-2)
 
 ## 279: Introduction to JSX and Babel
 
@@ -924,3 +925,70 @@ In this lesson, we delved into array functions in JavaScript, exploring the `map
 - Referenced a Mozilla article on arrow functions for a deeper understanding of their history and usage.
 
 In the next lesson, we will return to React coding after leveling up our JavaScript skills with arrow functions. Stay tuned for more React development insights and practices.
+
+## 302: Keeper App Project - Part 2
+
+**References**
+
+- [Keeper App Part 2](https://codesandbox.io/p/sandbox/keeper-app-part-2-starting-b5w06?file=%2Fsrc%2Fnotes.js)
+  - [Solution](https://codesandbox.io/p/sandbox/keeper-app-part-2-completed-4dr3p?file=%2Fsrc%2Fcomponents%2FApp.js%3A11%2C7-17%2C10)
+
+In this session, we applied several concepts learned in previous lessons to enhance our Keeper app. Here's a summary of the key steps and concepts covered:
+
+**1. Introduction:**
+
+- Reviewed concepts such as props, mapping components, React devtools, arrow functions, map, filter, and reduce.
+
+**2. Challenge: Render Notes Dynamically:**
+
+- The goal was to render all notes from the `notes.js` array dynamically as separate `Note` components in the `Keeper` app.
+
+**3. Updating Note Component:**
+
+- Modified the `Note` component to accept custom props (`title` and `content`) for dynamic content rendering.
+
+  ```jsx
+  function App() {
+    return (
+      <div>
+        <Header />
+        {notes.map((noteItem) => (
+          <Note
+            key={noteItem.key}
+            title={noteItem.title}
+            content={noteItem.content}
+          />
+        ))}
+
+        <Footer />
+      </div>
+    );
+  }
+  ```
+
+**4. Leveraging Arrow Functions and Mapping:**
+
+- Utilized arrow functions and the `map` function to render multiple notes dynamically.
+- Exported the `notes` array from `notes.js` and imported it into `App.js`.
+  - `import notes from "../notes.js";`
+
+**5. Simplifying Code with Arrow Functions:**
+
+- Demonstrated how to simplify the code using arrow functions for concise mapping.
+- Discussed the importance of using a unique `key` prop for each dynamically rendered component.
+
+**6. Additional Concepts Mentioned:**
+
+- Emphasized the debugging benefits of React devtools for inspecting props.
+
+**7. Future Topics:**
+
+- Mentioned upcoming lessons covering user inputs, handling forms, dynamic addition of new notes, note deletion, and more.
+
+**8. Next Lesson: Conditional Rendering:**
+
+- Previewed the next lesson on conditional rendering, indicating the continuous progression of React development skills.
+
+**9. Challenges and Review:**
+
+- Encouraged viewers to review the code, complete the challenge, and prepare for upcoming lessons.
