@@ -992,3 +992,103 @@ In this session, we applied several concepts learned in previous lessons to enha
 **9. Challenges and Review:**
 
 - Encouraged viewers to review the code, complete the challenge, and prepare for upcoming lessons.
+
+** 303: React Conditional Rendering with the Ternary Operator & AND Operator **
+
+**React Login Flow - Conditional Rendering**
+
+In this lesson, we focused on creating a login flow in React and explored techniques for conditionally rendering different components based on user authentication status. Here's a summary of the key points covered:
+
+**1. Introduction to Conditional Rendering:**
+
+- Discussed the need for showing different components based on whether the user is logged in or not.
+- Introduced the concept of conditional rendering in React.
+
+**2. Challenge Setup:**
+
+- Set up a simple scenario with a boolean variable `isLoggedIn` indicating the user's login status.
+
+**3. Initial Approach - Using a Function:**
+
+- Demonstrated an initial approach using a function (`renderConditionally`) to conditionally render components based on the value of `isLoggedIn`.
+
+**4. Component Extraction:**
+
+- Emphasized the importance of creating separate components for reusability and single responsibility.
+- Created `Login` component to encapsulate the login form.
+- Created `Input` component to handle input fields with props for type and placeholder.
+
+**5. Ternary Operator for Conditional Rendering:**
+
+- Introduced the ternary operator (`condition ? expr1 : expr2`) as an alternative to traditional `if-else` statements.
+  - ` CONDITION ? DO IF TRUE : DO IF FALSE`
+  - ` isCloudy === true ? bringUmbrella() : bringSunscreen()`
+- Showed how to use the ternary operator for inline conditional rendering based on the value of `isLoggedIn`.
+
+**6. Using the AND Operator:**
+
+- Explained how the logical AND (`&&`) operator can be used for concise conditional rendering.
+- Illustrated that the right-hand side expression is evaluated only if the left-hand side condition is true.
+
+  - (Expression && Expression)
+    ```jsx
+    let x = 5;
+    (x > 3 && x < 7) // true true
+
+          let x = 1;
+          (x > 3 && x < 7) // false. Does not even check if the other expression is true or not. As long as one is false, then the whole statement is false.
+          ```
+
+    **7. Practical Examples:**
+
+- Applied the ternary operator and AND operator to practical scenarios, such as displaying a message based on the current time.
+
+**8. Challenge Preview:**
+
+- Introduced the upcoming challenge for viewers to practice using the ternary operator and the AND operator in React.
+
+**9. Conclusion:**
+
+- Encouraged viewers to apply the concepts learned in the next lesson's challenge.
+
+**References**
+
+- [React Conditional Rendering](https://codesandbox.io/p/sandbox/conditional-rendering-yfdes?file=%2Fsrc%2Findex.js%3A6%2C1)
+  - [Solution](https://codesandbox.io/p/sandbox/conditional-rendering-completed-ovu1v)
+- [Single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+
+  The **Single Responsibility Principle (SRP)** is a programming concept emphasizing that a module should have one clear responsibility to a specific user or group. It discourages coupling and supports maintainability.
+
+  **Definition:**
+
+  - A module should be responsible for one actor.
+  - Actor: A group (stakeholders or users) requiring a change in the module.
+
+  **Robert C. Martin's Expression:**
+
+  - "A class should have only one reason to change."
+  - Clarification: Martin advocates gathering things that change for the same reasons and separating those that change for different reasons.
+
+  **Role-Centric Perspective:**
+
+  - Martin argues the principle focuses on roles or actors.
+  - Different roles (e.g., accountant, database administrator) should be handled by separate modules.
+
+  **Responsibility Defined:**
+
+  - A responsibility is a reason to change.
+  - A class or module should have only one reason to be changed or rewritten.
+
+  **Example Scenario:**
+
+  - Consider a module compiling and printing a report.
+  - If the report's content and format change, these are different responsibilities.
+  - SRP suggests separating these aspects into distinct classes or modules.
+
+  **Importance for Robustness:**
+
+  - Focusing a class on a single concern enhances its robustness.
+  - Example: If there's a change in the report compilation process, the risk of breaking printing code is reduced with separate classes.
+
+- [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+- [Inline If with Logical && Operator](https://legacy.reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator)
