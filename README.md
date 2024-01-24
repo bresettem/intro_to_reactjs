@@ -35,6 +35,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [300: Javascript ES6 Map/Filter/Reduce](#300-javascript-es6-mapfilterreduce)
   - [301: Javascript ES6 Arrow Functions](#301-javascript-es6-arrow-functions)
   - [302: Keeper App Project - Part 2](#302-keeper-app-project---part-2)
+  - [304: Conditional Rendering Practice](#304-conditional-rendering-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1031,7 +1032,8 @@ In this lesson, we focused on creating a login flow in React and explored techni
 - Illustrated that the right-hand side expression is evaluated only if the left-hand side condition is true.
 
   - (Expression && Expression)
-    ```jsx
+
+    ````jsx
     let x = 5;
     (x > 3 && x < 7) // true true
 
@@ -1040,6 +1042,7 @@ In this lesson, we focused on creating a login flow in React and explored techni
           ```
 
     **7. Practical Examples:**
+    ````
 
 - Applied the ternary operator and AND operator to practical scenarios, such as displaying a message based on the current time.
 
@@ -1092,3 +1095,64 @@ In this lesson, we focused on creating a login flow in React and explored techni
 
 - [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 - [Inline If with Logical && Operator](https://legacy.reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator)
+
+## 304: Conditional Rendering Practice
+
+1. **Change Button Text:**
+
+   - Pass `userIsRegistered` as a prop to the `Form` component.
+   - Inside the `Form` component, use conditional rendering to show "Login" if `props.isRegistered` is true, otherwise show "Register".
+
+     ```jsx
+     // Inside App.js
+     <Form isRegistered={userIsRegistered} />
+
+     // Inside Form.jsx
+     <button>{props.isRegistered ? 'Login' : 'Register'}</button>
+     ```
+
+2. **Conditional Rendering for Confirm Password Input:**
+
+   - Pass `userIsRegistered` as a prop to the `Form` component.
+   - Use the logical AND operator (`&&`) to conditionally render the Confirm Password input only if `props.isRegistered` is false.
+
+     ```jsx
+     // Inside Form.jsx
+     {
+       props.isRegistered === false && (
+         <input
+           type="password"
+           name="confirmPassword"
+           placeholder="Confirm Password"
+         />
+       );
+     }
+     ```
+
+     Alternatively, a shorter form using the NOT operator (`!`) and the AND operator (`&&`):
+
+     ```jsx
+     // Inside Form.jsx
+     {
+       !props.isRegistered && (
+         <input
+           type="password"
+           name="confirmPassword"
+           placeholder="Confirm Password"
+         />
+       );
+     }
+     ```
+
+     ```jsx
+     // Inside App.jsx
+     let userIsRegistered = false;
+
+     function App() {
+       return (
+         <div className="container">
+           <Form isRegistered={userIsRegistered} />
+         </div>
+       );
+     }
+     ```
