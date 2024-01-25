@@ -37,6 +37,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [302: Keeper App Project - Part 2](#302-keeper-app-project---part-2)
   - [304: Conditional Rendering Practice](#304-conditional-rendering-practice)
   - [305: State in React - Declarative vs. Imperative Programming](#305-state-in-react---declarative-vs-imperative-programming)
+  - [306: React Hooks - useState](#306-react-hooks---usestate)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1213,3 +1214,82 @@ In this lesson, we focused on creating a login flow in React and explored techni
   - One commonly used hook is `useState`.
   - State changes trigger re-renders in React.
   - Example: Introduction to hooks in the next lesson.
+
+## 306: React Hooks - useState
+
+- **Introduction to State and React Hooks:**
+
+  - State is crucial for making interactive React applications.
+  - React Hooks, like `useState`, enable the management of state in functional components.
+  - State allows the dynamic updating of the user interface based on changing values.
+
+- **Setting up a Simple Counter App:**
+
+  - The goal is to create a counter that increments and decrements.
+  - Initial code has a hardcoded number; the objective is to make it dynamic.
+
+- **Understanding `useState` Hook:**
+
+  - `useState` is a hook from the React module.
+  - To use `useState`, it must be called inside a functional component.
+  - It returns an array with the current state value and a function to update the state.
+    - `const [count, setCount] = useState(0);`
+
+- **Implementing `useState` in the Counter App:**
+
+  - Replace the hardcoded value with the `useState` hook.
+  - Destructure the array returned by `useState` to access the state value and update function.
+    ```jsx
+    // Destructuring Example
+    const [red, green, blue] = [9, 132, 227];
+    console.log(blue);
+    ```
+  - Initial value and update function are conventionally named (`count` and `setCount`).
+
+- **Updating State with Buttons:**
+
+  - Create functions (`increase` and `decrease`) that use `setCount` to update the state.
+  - Buttons trigger these functions, modifying the displayed count.
+
+- **Challenge: Enhancing the Counter App:**
+
+  - Create a button to decrease the count, enabling a full range of counter functionality.
+  - Use the `useState` hook to manage and update the state.
+
+    ```jsx
+    import React, { useState } from "react";
+
+    function App() {
+      const [count, setCount] = useState(0);
+
+      function increase() {
+        setCount(count + 1);
+      }
+
+      function decrease() {
+        setCount(count - 1);
+      }
+
+      return (
+        <div className="container">
+          <h1>{count}</h1>
+          <button onClick={increase}>+</button>
+          <button onClick={decrease}>-</button>
+        </div>
+      );
+    }
+
+    export default App;
+    ```
+
+- **Summary and Practice:**
+  - Understanding the basics of `useState` is essential for React development.
+  - Practice by recreating the app from scratch to solidify comprehension.
+  - Explore and experiment with the provided code sandbox.
+  - Look forward to the upcoming challenge in the next lesson.
+
+**References**
+
+- [Use State Practice](https://codesandbox.io/p/sandbox/usestate-hook-wd3vs)
+  - [Solution](https://codesandbox.io/p/sandbox/usestate-hook-completed-ylxqj)
+- [Use State Docs](https://react.dev/reference/react/useState)
