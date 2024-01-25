@@ -38,6 +38,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [304: Conditional Rendering Practice](#304-conditional-rendering-practice)
   - [305: State in React - Declarative vs. Imperative Programming](#305-state-in-react---declarative-vs-imperative-programming)
   - [306: React Hooks - useState](#306-react-hooks---usestate)
+  - [307: useState Hook Practice](#307-usestate-hook-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1293,3 +1294,113 @@ In this lesson, we focused on creating a login flow in React and explored techni
 - [Use State Practice](https://codesandbox.io/p/sandbox/usestate-hook-wd3vs)
   - [Solution](https://codesandbox.io/p/sandbox/usestate-hook-completed-ylxqj)
 - [Use State Docs](https://react.dev/reference/react/useState)
+
+## 307: useState Hook Practice
+
+- **Practice with `useState` Hook:**
+
+  - Challenge: Update Time Display
+
+    - **Part 1: On Button Click**
+
+      - Fetch the current time using `new Date().toLocaleTimeString()`.
+      - Use `useState` to manage the time state in the functional component.
+      - Display the time in the React component, initially and on button click.
+
+        - **Solution:**
+
+          ```jsx
+          import React, { useState } from "react";
+
+          function App() {
+            const now = new Date().toLocaleTimeString();
+            const [time, setTime] = useState(now);
+
+            function updateTime() {
+              const newTime = new Date().toLocaleTimeString();
+              setTime(newTime);
+            }
+
+            return (
+              <div className="container">
+                <h1>{time}</h1>
+                <button onClick={updateTime}>Get Time</button>
+              </div>
+            );
+          }
+
+          export default App;
+          ```
+
+    - **Part 2: Auto-Refresh Every Second**
+
+      - Utilize `setInterval` to trigger an update to the time every second.
+      - Ensure the component dynamically refreshes without the need to click the button.
+
+        - **Solution:**
+
+          ```jsx
+          import React, { useState } from "react";
+
+          function App() {
+            const now = new Date().toLocaleTimeString();
+            const [time, setTime] = useState(now);
+
+            function updateTime() {
+              const newTime = new Date().toLocaleTimeString();
+              setTime(newTime);
+            }
+
+            setInterval(updateTime, 1000);
+
+            return (
+              <div className="container">
+                <h1>{time}</h1>
+                <button onClick={updateTime}>Get Time</button>
+              </div>
+            );
+          }
+
+          export default App;
+          ```
+
+- **Implementation in App.jsx:**
+
+  - Fetch the current time and log it to verify functionality.
+  - Use `useState` to manage the time state.
+  - Create an `updateTime` function triggered by the button click.
+  - Utilize `setInterval` to auto-refresh the time every second.
+
+- **Key Concepts and Syntax:**
+
+  - `useState` hook for managing state in functional components.
+  - `setInterval` for executing functions at specified intervals.
+  - Destructuring to extract values from arrays and objects.
+
+- **Challenge Resolution Tips:**
+
+  - Pay attention to the placement and order of code.
+  - Ensure correct usage of `useState` and destructuring in React components.
+  - Utilize functions like `setTime` to update state.
+  - Test the application to observe dynamic time updates.
+
+- **Practice and Muscle Memory:**
+
+  - Revisit the challenge and attempt it independently for better understanding.
+  - Consistent practice aids in mastering new syntax and concepts.
+
+- **Conclusion:**
+
+  - Successfully completing challenges enhances proficiency.
+  - Practice and experimentation foster a deeper understanding of React.
+  - Embrace challenges as learning opportunities.
+
+- **Next Steps:**
+  - Continue exploring React concepts and hooks.
+  - Engage in additional challenges to solidify knowledge.
+  - Stay curious and build more interactive React applications.
+
+**References**
+
+- [useState Hook Practice](https://codesandbox.io/p/sandbox/usestate-hook-practice-k0g69)
+  - [Solution](https://codesandbox.io/p/sandbox/usestate-hook-practice-completed-t99f4)
