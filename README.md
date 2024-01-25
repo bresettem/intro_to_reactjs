@@ -36,6 +36,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [301: Javascript ES6 Arrow Functions](#301-javascript-es6-arrow-functions)
   - [302: Keeper App Project - Part 2](#302-keeper-app-project---part-2)
   - [304: Conditional Rendering Practice](#304-conditional-rendering-practice)
+  - [305: State in React - Declarative vs. Imperative Programming](#305-state-in-react---declarative-vs-imperative-programming)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1156,3 +1157,59 @@ In this lesson, we focused on creating a login flow in React and explored techni
        );
      }
      ```
+
+## 305: State in React - Declarative vs. Imperative Programming
+
+- **Concept of State in React:**
+
+  - In React, the user interface (UI) is a function of the state of the application.
+
+    - ```UI = f(state
+
+      ```
+
+    - )```
+
+  - Analogy: Ice and water are the same substance (component) but appear differently based on the temperature (state).
+  - Changes in the state trigger changes in the UI.
+  - Example: To-do list app with a state variable `isDone` to track if a to-do item is completed.
+
+- **Declarative Programming:**
+
+  - In React, UI changes are declared based on the state.
+  - Example: Conditional styling using `textDecoration` based on the value of `isDone`.
+
+    ```jsx
+    const strikeThrough = { textDecoration: "line-through" };
+
+    // Inside render method
+    <p style={isDone ? strikeThrough : null}>Buy milk</p>;
+    ```
+
+- **Imperative Programming:**
+
+  - Directly instructing the DOM to change properties using imperative code.
+  - Example: Using vanilla JavaScript to change the style of an element.
+
+    ```jsx
+    // Imperative approach
+    document.getElementById("root").style.textDecoration = "line-through";
+    ```
+
+  - Example: Using event listeners to manually handle changes.
+
+    ```jsx
+    // Imperative event handling
+    function strike() {
+      document.getElementById("root").style.textDecoration = "line-through";
+    }
+    function App() {
+      return <button onClick={strike}>Change to strike through</button>;
+    }
+    ```
+
+- **Introduction to Hooks:**
+  - Hooks are functions in React that allow interaction with the state.
+  - One commonly used hook is `useState`.
+  - State changes trigger re-renders in React.
+  - Example: Introduction to hooks in the next lesson.
