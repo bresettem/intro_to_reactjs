@@ -41,6 +41,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [307: useState Hook Practice](#307-usestate-hook-practice)
   - [308: Javascript ES6 Object \& Array Destructuring](#308-javascript-es6-object--array-destructuring)
   - [309: Javascript ​ES6 Destructuring Challenge Solution](#309-javascript-es6-destructuring-challenge-solution)
+  - [310: Event Handling in React](#310-event-handling-in-react)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1525,3 +1526,70 @@ const {
 **References**
 
 - [ES6 Restructuring Solution](https://codesandbox.io/p/sandbox/es6-destructuring-completed-zvjn9)
+
+## 310: Event Handling in React
+
+- **Handling Events in React:**
+
+  - Understanding how to detect and respond to user interactions in React.
+  - Utilizing concepts like conditional rendering, inline styling, mouse events, and state management.
+  - Implementing a practical example: changing button color on mouse over and mouse out.
+
+- **Challenge: Change Button Color on Hover:**
+
+  - Challenge: Add `onMouseOver` and `onMouseOut` attributes to the button to change its background color on hover.
+  - Utilizing event handling, inline styling, and state management.
+
+- **Solution:**
+
+  - Applying `onMouseOver` and `onMouseOut` attributes to the button, triggering functions `handleMouseOver` and `handleMouseOut`.
+  - Managing a state variable `isMousedOver` to determine the background color.
+  - Using `useState` to handle state changes.
+  - Conditional rendering with inline styles to dynamically change the background color.
+  - Demonstrating the result: button turns black on hover and white on mouse out.
+
+        ```jsx
+        import React, { useState } from "react";
+
+        function App() {
+          const [headingText, setHeadingText] = useState("Hello");
+          const [isMouseOver, setMouseOver] = useState(false);
+          function handleClick() {
+            setHeadingText("Submitted.");
+          }
+
+          function handleMouseOver() {
+            setMouseOver(true);
+          }
+
+          function handleMouseOut() {
+            setMouseOver(false);
+          }
+
+          return (
+            <div className="container">
+              <h1>{headingText}</h1>
+              <input type="text" placeholder="What's your name?" />
+
+              <button
+                style={{
+                  backgroundColor: isMouseOver ? "black" : "white",
+                }}
+                onClick={handleClick}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+              >
+                Submit
+              </button>
+            </div>
+          );
+        }
+
+        export default App;
+        ```
+
+    **References**
+
+- [Event Handling in React](https://codesandbox.io/p/sandbox/event-handling-in-react-2tltl)
+  - [Solution](https://codesandbox.io/p/sandbox/event-handling-in-react-completed-61rti)
+- [HTML Event Attributes](https://www.w3schools.com/tags/ref_eventattributes.asp)
