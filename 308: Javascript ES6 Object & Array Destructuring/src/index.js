@@ -66,6 +66,7 @@ const {
   speedStats: { topSpeed: hondaTopSpeed },
   colorsByPopularity: [hondaTopColor],
 } = honda;
+
 const {
   speedStats: { topSpeed: teslaTopSpeed },
   colorsByPopularity: [teslaTopColor],

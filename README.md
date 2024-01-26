@@ -40,6 +40,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [306: React Hooks - useState](#306-react-hooks---usestate)
   - [307: useState Hook Practice](#307-usestate-hook-practice)
   - [308: Javascript ES6 Object \& Array Destructuring](#308-javascript-es6-object--array-destructuring)
+  - [309: Javascript ​ES6 Destructuring Challenge Solution](#309-javascript-es6-destructuring-challenge-solution)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1487,3 +1488,40 @@ In this lesson, we focused on creating a login flow in React and explored techni
 
 - [ES6 Restructuring](https://codesandbox.io/p/sandbox/es6-destructuring-ide4v)
 - [Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+## 309: Javascript ​ES6 Destructuring Challenge Solution
+
+- Importing the `cars` constant from `practice.js`.
+- Destructuring the array into variables for each car (Honda and Tesla).
+
+  ```javascript
+  import cars from "./practice";
+
+  const [honda, tesla] = cars;
+  ```
+
+- Further destructuring to access nested properties like `speedStats` and `colorsByPopularity`.
+- Renaming variables for clarity.
+
+```javascript
+const {
+  speedStats: { topSpeed: hondaTopSpeed },
+} = honda;
+const {
+  speedStats: { topSpeed: teslaTopSpeed },
+} = tesla;
+
+const {
+  colorsByPopularity: [hondaTopColor],
+} = honda;
+
+const {
+  colorsByPopularity: [teslaTopColor],
+} = tesla;
+```
+
+- Achieving the goal of rendering stats in a table without modifying existing code.
+
+**References**
+
+- [ES6 Restructuring Solution](https://codesandbox.io/p/sandbox/es6-destructuring-completed-zvjn9)
