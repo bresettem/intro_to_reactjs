@@ -39,6 +39,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [305: State in React - Declarative vs. Imperative Programming](#305-state-in-react---declarative-vs-imperative-programming)
   - [306: React Hooks - useState](#306-react-hooks---usestate)
   - [307: useState Hook Practice](#307-usestate-hook-practice)
+  - [308: Javascript ES6 Object \& Array Destructuring](#308-javascript-es6-object--array-destructuring)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1404,3 +1405,85 @@ In this lesson, we focused on creating a login flow in React and explored techni
 
 - [useState Hook Practice](https://codesandbox.io/p/sandbox/usestate-hook-practice-k0g69)
   - [Solution](https://codesandbox.io/p/sandbox/usestate-hook-practice-completed-t99f4)
+
+## 308: Javascript ES6 Object & Array Destructuring
+
+- **Destructuring in JavaScript ES6:**
+
+  - Understanding the syntax and usage.
+  - Destructuring objects and arrays.
+
+- **Challenge: Destructuring Practice:**
+
+  - Goal: Render stats from practice.js in a table without changing existing code.
+  - Challenge Instructions:
+    - Uncomment the code below the challenge line.
+    - Use destructuring to render brand, top speed, and top color in a table.
+    - Achieve rendering as shown in the provided example.
+    - Errors in the console are unrelated to the challenge.
+
+- **Destructuring Basics Recap:**
+
+  - Destructuring Arrays:
+    - `const [item1, item2] = array;`
+    - Unique variable names inside the array.
+    - Alternative variable names using `:` syntax.
+    - Default values for array items.
+  - Destructuring Objects:
+    - `const { prop1, prop2 } = object;`
+    - Unique variable names matching object properties.
+    - Alternative variable names using `:` syntax.
+      ```jsx
+      const { name, sound } = cat;
+      const { name: catName, sound: catSound } = cat;
+      console.log("catName", catName);
+      ```
+    - Default values for object properties.
+    - Destructuring nested objects.
+
+- **Examples with data.js:**
+
+  - Using `data.js` to practice destructuring.
+  - Destructuring an array of objects (`animals`) and logging values.
+  - Destructuring an object (`cat`) and customizing variable names.
+  - Providing default values in case of undefined properties.
+  - Destructuring nested objects (`feedingRequirements`).
+
+- **Example: Destructuring with a Function:**
+
+  - Creating a function (`useAnimals`) returning an array.
+  - Destructuring the output array into variables.
+  - Logging values obtained from the function.
+
+- **Understanding Set State Function:**
+
+  - Imagining how `useState` might work.
+  - Hypothetical example: `useAnimals` function returning an array.
+
+    ```jsx
+    function useAnimals(animal) {
+      return [
+        animal.name,
+        function () {
+          console.log(animal.sound);
+        },
+      ];
+    }
+    export { useAnimals };
+    ```
+
+- **Challenge Solution:**
+
+  - Complete the challenge by uncommenting and modifying code in `index.js`.
+  - Utilize destructuring to render stats in a table as instructed.
+  - Ensure that the provided example outcome is achieved.
+
+- **Conclusion:**
+  - Destructuring is a powerful feature in modern JavaScript.
+  - Provides concise syntax for working with arrays and objects.
+  - Practice with destructuring enhances coding skills.
+
+**References**
+
+- [ES6 Restructuring](https://codesandbox.io/p/sandbox/es6-destructuring-ide4v)
+- [Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
