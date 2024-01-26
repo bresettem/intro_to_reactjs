@@ -42,6 +42,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [308: Javascript ES6 Object \& Array Destructuring](#308-javascript-es6-object--array-destructuring)
   - [309: Javascript ​ES6 Destructuring Challenge Solution](#309-javascript-es6-destructuring-challenge-solution)
   - [310: Event Handling in React](#310-event-handling-in-react)
+  - [311: React Forms](#311-react-forms)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1593,3 +1594,107 @@ const {
 - [Event Handling in React](https://codesandbox.io/p/sandbox/event-handling-in-react-2tltl)
   - [Solution](https://codesandbox.io/p/sandbox/event-handling-in-react-completed-61rti)
 - [HTML Event Attributes](https://www.w3schools.com/tags/ref_eventattributes.asp)
+
+## 311: React Forms
+
+1. **Handling Input Changes:**
+
+   - Use the `onChange` event on the input element to detect changes in its value.
+   - Create a function, e.g., `handleChange`, to handle the change event.
+   - Log the new value using `event.target.value`.
+   - Use the `useState` hook to manage the state of the input.
+
+2. **Controlled Components:**
+
+   - Connect the input value to a state variable, e.g., `name`, making it a controlled component.
+   - Update the state with the typed value using the `setName` function.
+
+   ```jsx
+   const [name, setName] = useState("");
+
+   function handleChange(event) {
+     console.log(event.target.value);
+     setName(event.target.value);
+   }
+   ```
+
+3. **Form Submission:**
+   - Add an `onSubmit` event to the form, pointing to a function, e.g., `handleClick`.
+   ```jsx
+   <button type="submit" onClick={handleClick}>
+     Submit
+   </button>
+   ```
+
+- In the `handleClick` function, prevent the default form submission behavior using `event.preventDefault()`.
+
+  ```jsx
+  const [headingText, setHeading] = useState("");
+
+  function handleClick(event) {
+    setHeading(name);
+    event.preventDefault();
+  }
+  ```
+
+4. **Updating Heading Text:**
+
+   - Use another state variable, e.g., `headingText`, to manage the text displayed in the `<h1>` tag.
+   - Set the heading text using the `setHeading` function when the submit button is clicked.
+
+5. **Form Structure:**
+
+   - Place the input and submit button inside a `<form>` element.
+   - Ensure the input value is bound to the state variable and update with each keystroke.
+
+6. **Preventing Page Refresh:**
+
+   - When handling the form submission, call `event.preventDefault()` to prevent the default form behavior (page refresh).
+
+7. **Solution Code:**
+
+   ```jsx
+   function App() {
+     const [name, setName] = useState("");
+     const [headingText, setHeading] = useState("");
+
+     function handleChange(event) {
+       console.log(event.target.value);
+       setName(event.target.value);
+     }
+
+     function handleClick(event) {
+       setHeading(name);
+       event.preventDefault();
+     }
+
+     return (
+       <div className="container">
+         <h1>Hello {headingText}</h1>
+         <form onSubmit={handleClick}>
+           <input
+             onChange={handleChange}
+             type="text"
+             placeholder="What's your name?"
+             value={name}
+           />
+           <button type="submit">Submit</button>
+         </form>
+       </div>
+     );
+   }
+   ```
+
+**Summary:**
+
+- The example demonstrates handling form input, controlling components, and preventing page refresh on form submission.
+- Utilizing React's `useState` hook for state management and event handling.
+- A form structure with input and submit button inside, connected to state variables.
+- Clear separation of concerns with specific functions (`handleChange`, `handleClick`) for event handling.
+- Effective use of controlled components to manage input state.
+
+**References**
+
+- [React Forms Practice](https://codesandbox.io/p/sandbox/react-forms-23oen)
+  - [Solution](https://codesandbox.io/p/sandbox/react-forms-completed-4vy2h?file=%2Fsrc%2Fcomponents%2FApp.jsx%3A3%2C1-32%2C2)
+- [React Forms](https://react.dev/reference/react-dom/components/form)
