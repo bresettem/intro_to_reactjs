@@ -43,6 +43,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [309: Javascript ​ES6 Destructuring Challenge Solution](#309-javascript-es6-destructuring-challenge-solution)
   - [310: Event Handling in React](#310-event-handling-in-react)
   - [311: React Forms](#311-react-forms)
+  - [312: Class Components vs. Functional Components](#312-class-components-vs-functional-components)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1698,3 +1699,90 @@ const {
 - [React Forms Practice](https://codesandbox.io/p/sandbox/react-forms-23oen)
   - [Solution](https://codesandbox.io/p/sandbox/react-forms-completed-4vy2h?file=%2Fsrc%2Fcomponents%2FApp.jsx%3A3%2C1-32%2C2)
 - [React Forms](https://react.dev/reference/react-dom/components/form)
+
+## 312: Class Components vs. Functional Components
+
+**Background:**
+
+- React initially offered two approaches for adding state to components: functional components and class components.
+- Class components required the use of the `class` keyword and extending `React.Component`.
+
+**Class Components:**
+
+- Example of a class component:
+
+  ```jsx
+  import React from "react";
+
+  class ClassComponent extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        count: 0,
+      };
+      this.increase = this.increase.bind(this);
+    }
+
+    increase() {
+      this.setState({ count: this.state.count + 1 });
+    }
+
+    render() {
+      return (
+        <div>
+          <h1>{this.state.count}</h1>
+          <button onClick={this.increase}>+</button>
+        </div>
+      );
+    }
+  }
+
+  export default ClassComponent;
+  ```
+
+- Classes were commonly used for state management in the past.
+
+**Introduction of Hooks:**
+
+- React introduced hooks in 2018 as a way to simplify state management and lifecycle logic.
+- Hooks are recommended for new code due to improved clarity and reduced boilerplate.
+
+**Functional Components with Hooks:**
+
+Example of a functional component using hooks:
+
+```jsx
+import React, { useState } from "react";
+
+function FunctionalComponent() {
+  const [count, setCount] = useState(0);
+
+  function increase() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increase}>+</button>
+    </div>
+  );
+}
+
+export default FunctionalComponent;
+```
+
+- Hooks simplify state management, eliminating the need for classes.
+
+**Transition from Classes to Hooks:**
+
+- React team recommends using hooks for new code. [Source](https://react.dev/reference/react/PureComponent#alternatives)
+- Hooks can be used alongside classes, but the community is gradually adopting hooks for cleaner code.
+- Legacy code may still use class components, but newer projects tend to leverage hooks exclusively.
+
+**References**
+
+- [State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
+- [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects)
+- [Hooks](https://react.dev/reference/react/hooks)
+- [Class Components Vs Hooks Practice](https://codesandbox.io/p/sandbox/class-components-vs-hooks-m2lzf)
