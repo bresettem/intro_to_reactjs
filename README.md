@@ -44,6 +44,9 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [310: Event Handling in React](#310-event-handling-in-react)
   - [311: React Forms](#311-react-forms)
   - [312: Class Components vs. Functional Components](#312-class-components-vs-functional-components)
+  - [313: Changing Complex State](#313-changing-complex-state)
+  - [Challenge Overview](#challenge-overview)
+  - [Solution Approach](#solution-approach)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1786,3 +1789,184 @@ export default FunctionalComponent;
 - [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects)
 - [Hooks](https://react.dev/reference/react/hooks)
 - [Class Components Vs Hooks Practice](https://codesandbox.io/p/sandbox/class-components-vs-hooks-m2lzf)
+
+## 313: Changing Complex State
+
+In this lesson, we explore ways to manage more complex state in React, specifically focusing on scenarios involving JavaScript objects. The goal is to create a form where user input (first name and last name) is stored in a stateful manner.
+
+## Challenge Overview
+
+- Start with a simple form with two inputs (first name and last name) and a submit button.
+
+- The challenge is to manage the state of these inputs independently, ensuring that the first name persists when the last name is added.
+  ```jsx
+  <div className="container">
+    <h1>Hello</h1>
+    <form>
+      <input name="fName" placeholder="First Name" />
+      <input name="lName" placeholder="Last Name" />
+      <button>Submit</button>
+    </form>
+  </div>
+  ```
+
+## Solution Approach
+
+1. **Individual State for Each Input:**
+
+   - Create state variables (`fName`, `lName`) for first name and last name using `useState`.
+
+   - Use separate functions (`setFName`, `setLName`) to update the state of each input.
+
+   - Bind each input value and `onChange` event to the corresponding state variable and function.
+
+2. **Complex State with Object:**
+
+   - Refactor to use a single state variable (`fullName`) that holds an object.
+
+   - Update the `onChange` event to call a generic `handleChange` function.
+
+   - Inside `handleChange`, use the `name` attribute from the input to identify which part of the object to update.
+
+   - Utilize the functional form of `setFullName` to correctly update the state based on the previous value.
+
+   - Ensure the input values are controlled components by setting their values to corresponding object properties.
+
+**Code (Complex):**
+
+```jsx
+import React, { useState } from "react";
+
+function App() {
+  const [fName, setFName] = useState("");
+  const [lName, setLName] = useState("");
+
+  function updateFName(event) {
+    const firstName = event.target.value;
+    setFName(firstName);
+  }
+
+  function updateLName(event) {
+    const lastName = event.target.value;
+    setLName(lastName);
+  }
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    const inputName = event.target.name;
+
+    console.log("newValue", newValue); // f
+    console.log("inputName", inputName); // fName
+
+    setFullName((prevValue) => {
+      if (inputName === "fName") {
+        return {
+          fName: newValue,
+          lName: prevValue.lName,
+        };
+      } else if (inputName === "lName") {
+        return {
+          fName: prevValue.fName,
+          lName: newValue,
+        };
+      }
+    });
+  }
+  return (
+    <div class="container">
+      <h1>
+        Hello {fName} {lName}
+      </h1>
+      <input
+        type="text"
+        placeholder="First Name"
+        value={fName}
+        onChange={updateFName}
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        value={lName}
+        onChange={updateLName}
+      />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Code (Simple):**
+
+```jsx
+import React, { useState } from "react";
+
+function App() {
+  const [fullName, setFullName] = useState({
+    fName: "",
+    lName: "",
+  });
+
+  function handleChange(event) {
+    const { value, name } = event.target;
+
+    setFullName((prevValue) => {
+      if (name === "fName") {
+        return {
+          fName: value,
+          lName: prevValue.lName,
+        };
+      } else if (name === "lName") {
+        return {
+          fName: prevValue.fName,
+          lName: value,
+        };
+      }
+    });
+  }
+
+  return (
+    <div className="container">
+      <h1>
+        Hello {fullName.fName} {fullName.lName}
+      </h1>
+      <form>
+        <input
+          name="fName"
+          onChange={handleChange}
+          placeholder="First Name"
+          value={fullName.fName}
+        />
+        <input
+          name="lName"
+          onChange={handleChange}
+          placeholder="Last Name"
+          value={fullName.lName}
+        />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+export default App;
+```
+
+- Remember: Avoid accessing the event directly inside stateful setters to prevent synthetic event issues.
+
+**Notes**
+
+- The challenge demonstrates transitioning from managing individual input states to a more unified approach using a single state object.
+
+- Using object destructuring in the `handleChange` function simplifies code and enhances readability.
+
+- Understanding the limitations of synthetic events is crucial to avoid potential issues when updating state.
+
+**Conclusion**
+
+Mastering state management in React involves choosing the appropriate strategy based on the complexity of the application. Handling more complex states with objects provides a scalable and maintainable solution.
+
+**References**
+
+- [Changing Complex State Practice](https://codesandbox.io/p/sandbox/changing-complex-state-ruz1e)
+  - [Solution](https://codesandbox.io/p/sandbox/changing-complex-state-completed-3hyn7)
+- [React event object(Synthetic Event)](https://react.dev/reference/react-dom/components/common#react-event-object)
