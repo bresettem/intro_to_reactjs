@@ -35,6 +35,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [300: Javascript ES6 Map/Filter/Reduce](#300-javascript-es6-mapfilterreduce)
   - [301: Javascript ES6 Arrow Functions](#301-javascript-es6-arrow-functions)
   - [302: Keeper App Project - Part 2](#302-keeper-app-project---part-2)
+  - [303: React Conditional Rendering with the Ternary Operator \& AND Operator](#303-react-conditional-rendering-with-the-ternary-operator--and-operator)
   - [304: Conditional Rendering Practice](#304-conditional-rendering-practice)
   - [305: State in React - Declarative vs. Imperative Programming](#305-state-in-react---declarative-vs-imperative-programming)
   - [306: React Hooks - useState](#306-react-hooks---usestate)
@@ -743,13 +744,6 @@ In this lesson, we explored the technique of mapping components in React to elim
 
 ## 299: Mapping Data to Components Practice
 
-**References**
-
-- [Mapping Data to Components Practice](https://codesandbox.io/p/sandbox/mapping-components-practice-6fkfr)
-  - [Solution](https://codesandbox.io/p/sandbox/mapping-components-practice-completed-37h04)
-- [Emoji Meanings](https://www.emojimeanings.net/list-smileys-people-whatsapp)
-- [Description List Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
-
 **React Challenge - Emoji Dictionary**
 
 In this challenge, you were tasked with applying the knowledge of mapping components in React to create a beautiful emoji dictionary. Here's a summary of the key steps and solutions:
@@ -795,19 +789,14 @@ In this challenge, you were tasked with applying the knowledge of mapping compon
 - Extracted repeated structures into a separate component for better organization and reusability.
 - Used props to pass data dynamically and achieve a clean, efficient solution.
 
-## 300: Javascript ES6 Map/Filter/Reduce
-
 **References**
 
-- [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-- [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-- [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
-- [Find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-- [FindIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findindex)
-- [Substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Javascript ES6 Map/Filter/Reduce]()
-- [Map/Filter/Reduce Practice](https://codesandbox.io/p/sandbox/mapfilterreduce-h7sm6)
-  - [Solution](https://codesandbox.io/p/sandbox/mapfilterreduce-completed-3sm6u)
+- [Mapping Data to Components Practice](https://codesandbox.io/p/sandbox/mapping-components-practice-6fkfr)
+  - [Solution](https://codesandbox.io/p/sandbox/mapping-components-practice-completed-37h04)
+- [Emoji Meanings](https://www.emojimeanings.net/list-smileys-people-whatsapp)
+- [Description List Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
+
+## 300: Javascript ES6 Map/Filter/Reduce
 
 In this lesson, we delved into array functions in JavaScript, exploring the `map`, `filter`, `reduce`, `find`, and `findIndex` functions. Here's a summary of the key points:
 
@@ -896,13 +885,21 @@ In this lesson, we delved into array functions in JavaScript, exploring the `map
 
 - Emphasized understanding over memorization for array functions.
 
+**References**
+
+- [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+- [Find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [FindIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findindex)
+- [Substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [Javascript ES6 Map/Filter/Reduce]()
+- [Map/Filter/Reduce Practice](https://codesandbox.io/p/sandbox/mapfilterreduce-h7sm6)
+  - [Solution](https://codesandbox.io/p/sandbox/mapfilterreduce-completed-3sm6u)
+
 ## 301: Javascript ES6 Arrow Functions
 
 **References:**
-
-- [ES6 Arrow Functions Practice](https://codesandbox.io/p/sandbox/es6-arrow-functions-y8jhk)
-  - [Solution](https://codesandbox.io/p/sandbox/es6-arrow-functions-completed-gbtv7)
-- [Arrow Functions](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
 
 **1. Arrow Function Syntax:**
 
@@ -937,12 +934,11 @@ In this lesson, we delved into array functions in JavaScript, exploring the `map
 
 In the next lesson, we will return to React coding after leveling up our JavaScript skills with arrow functions. Stay tuned for more React development insights and practices.
 
+- [ES6 Arrow Functions Practice](https://codesandbox.io/p/sandbox/es6-arrow-functions-y8jhk)
+  - [Solution](https://codesandbox.io/p/sandbox/es6-arrow-functions-completed-gbtv7)
+- [Arrow Functions](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
+
 ## 302: Keeper App Project - Part 2
-
-**References**
-
-- [Keeper App Part 2](https://codesandbox.io/p/sandbox/keeper-app-part-2-starting-b5w06?file=%2Fsrc%2Fnotes.js)
-  - [Solution](https://codesandbox.io/p/sandbox/keeper-app-part-2-completed-4dr3p?file=%2Fsrc%2Fcomponents%2FApp.js%3A11%2C7-17%2C10)
 
 In this session, we applied several concepts learned in previous lessons to enhance our Keeper app. Here's a summary of the key steps and concepts covered:
 
@@ -1004,7 +1000,12 @@ In this session, we applied several concepts learned in previous lessons to enha
 
 - Encouraged viewers to review the code, complete the challenge, and prepare for upcoming lessons.
 
-** 303: React Conditional Rendering with the Ternary Operator & AND Operator **
+**References**
+
+- [Keeper App Part 2](https://codesandbox.io/p/sandbox/keeper-app-part-2-starting-b5w06?file=%2Fsrc%2Fnotes.js)
+  - [Solution](https://codesandbox.io/p/sandbox/keeper-app-part-2-completed-4dr3p?file=%2Fsrc%2Fcomponents%2FApp.js%3A11%2C7-17%2C10)
+
+## 303: React Conditional Rendering with the Ternary Operator & AND Operator
 
 **React Login Flow - Conditional Rendering**
 
@@ -1043,16 +1044,15 @@ In this lesson, we focused on creating a login flow in React and explored techni
 
   - (Expression && Expression)
 
-    ````jsx
+    ```jsx
     let x = 5;
-    (x > 3 && x < 7) // true true
+    x > 3 && x < 7; // true true
 
-          let x = 1;
-          (x > 3 && x < 7) // false. Does not even check if the other expression is true or not. As long as one is false, then the whole statement is false.
-          ```
+    let x = 1;
+    x > 3 && x < 7; // false. Does not even check if the other expression is true or not. As long as one is false, then the whole statement is false.
+    ```
 
-    **7. Practical Examples:**
-    ````
+**7. Practical Examples:**
 
 - Applied the ternary operator and AND operator to practical scenarios, such as displaying a message based on the current time.
 
@@ -1552,47 +1552,47 @@ const {
   - Conditional rendering with inline styles to dynamically change the background color.
   - Demonstrating the result: button turns black on hover and white on mouse out.
 
-        ```jsx
-        import React, { useState } from "react";
+    ```jsx
+    import React, { useState } from "react";
 
-        function App() {
-          const [headingText, setHeadingText] = useState("Hello");
-          const [isMouseOver, setMouseOver] = useState(false);
-          function handleClick() {
-            setHeadingText("Submitted.");
-          }
+    function App() {
+      const [headingText, setHeadingText] = useState("Hello");
+      const [isMouseOver, setMouseOver] = useState(false);
+      function handleClick() {
+        setHeadingText("Submitted.");
+      }
 
-          function handleMouseOver() {
-            setMouseOver(true);
-          }
+      function handleMouseOver() {
+        setMouseOver(true);
+      }
 
-          function handleMouseOut() {
-            setMouseOver(false);
-          }
+      function handleMouseOut() {
+        setMouseOver(false);
+      }
 
-          return (
-            <div className="container">
-              <h1>{headingText}</h1>
-              <input type="text" placeholder="What's your name?" />
+      return (
+        <div className="container">
+          <h1>{headingText}</h1>
+          <input type="text" placeholder="What's your name?" />
 
-              <button
-                style={{
-                  backgroundColor: isMouseOver ? "black" : "white",
-                }}
-                onClick={handleClick}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              >
-                Submit
-              </button>
-            </div>
-          );
-        }
+          <button
+            style={{
+              backgroundColor: isMouseOver ? "black" : "white",
+            }}
+            onClick={handleClick}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          >
+            Submit
+          </button>
+        </div>
+      );
+    }
 
-        export default App;
-        ```
+    export default App;
+    ```
 
-    **References**
+**References**
 
 - [Event Handling in React](https://codesandbox.io/p/sandbox/event-handling-in-react-2tltl)
   - [Solution](https://codesandbox.io/p/sandbox/event-handling-in-react-completed-61rti)
