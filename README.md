@@ -45,8 +45,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [311: React Forms](#311-react-forms)
   - [312: Class Components vs. Functional Components](#312-class-components-vs-functional-components)
   - [313: Changing Complex State](#313-changing-complex-state)
-  - [Challenge Overview](#challenge-overview)
-  - [Solution Approach](#solution-approach)
+  - [314: Changing Complex State Practice](#314-changing-complex-state-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -1794,11 +1793,12 @@ export default FunctionalComponent;
 
 In this lesson, we explore ways to manage more complex state in React, specifically focusing on scenarios involving JavaScript objects. The goal is to create a form where user input (first name and last name) is stored in a stateful manner.
 
-## Challenge Overview
+**Challenge Overview**
 
 - Start with a simple form with two inputs (first name and last name) and a submit button.
 
 - The challenge is to manage the state of these inputs independently, ensuring that the first name persists when the last name is added.
+
   ```jsx
   <div className="container">
     <h1>Hello</h1>
@@ -1810,7 +1810,7 @@ In this lesson, we explore ways to manage more complex state in React, specifica
   </div>
   ```
 
-## Solution Approach
+  **Solution Approach**
 
 1. **Individual State for Each Input:**
 
@@ -1970,3 +1970,121 @@ Mastering state management in React involves choosing the appropriate strategy b
 - [Changing Complex State Practice](https://codesandbox.io/p/sandbox/changing-complex-state-ruz1e)
   - [Solution](https://codesandbox.io/p/sandbox/changing-complex-state-completed-3hyn7)
 - [React event object(Synthetic Event)](https://react.dev/reference/react-dom/components/common#react-event-object)
+
+## 314: Changing Complex State Practice
+
+In this challenge, the goal is to update the given React code to manage state for a contact object containing first name, last name, and email. The user should be able to type their information in three inputs, and the corresponding values should be displayed in the appropriate elements.
+
+**Challenge Overview**
+
+- The `contact` state object contains properties: `fName`, `lName`, and `email`.
+
+- Create an `onChange` event handler named `handleChange` for each input to capture changes.
+
+- Utilize the `setContact` method to update the `contact` state, considering only the changed field.
+
+- Display the values in the respective elements: `<p>`, `<h2>`, and `<a>`.
+
+**Solution Approach**
+
+1. **Input Change Handling:**
+
+   - Implement an `onChange` event for each input, calling the common `handleChange` method.
+
+   - Destructure the `event.target` object to obtain `name` and `value`.
+
+2. **Updating Contact State:**
+
+   - Use the functional form of `setContact` to access the previous state.
+
+   - Based on the input `name`, return a new object updating only the relevant field.
+
+3. **Displaying Values:**
+
+   - Connect each input to its corresponding state property using the `value` attribute.
+
+   - Display the values in the `<h1>`, `<p>`, and `<a>` elements.
+
+**Final Code:**
+
+```jsx
+import React, { useState } from "react";
+
+function App() {
+  const [contact, setContact] = useState({
+    fName: "",
+    lName: "",
+    email: "",
+  });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    console.log("name", name);
+    console.log("value", value);
+
+    setContact((prevValue) => {
+      if (name === "fName") {
+        return {
+          fName: value,
+          lName: prevValue.lName,
+          email: prevValue.email,
+        };
+      } else if (name === "lName") {
+        return {
+          fName: prevValue.fName,
+          lName: value,
+          email: prevValue.email,
+        };
+      } else if (name === "email") {
+        return {
+          fName: prevValue.fName,
+          lName: prevValue.lName,
+          email: value,
+        };
+      }
+    });
+  }
+  return (
+    <div className="container">
+      <h1>
+        Hello {contact.fName} {contact.lName}
+      </h1>
+      <p>{contact.email}</p>
+      <form>
+        <input
+          name="fName"
+          onChange={handleChange}
+          placeholder="First Name"
+          value={contact.fName}
+        />
+        <input
+          name="lName"
+          onChange={handleChange}
+          placeholder="Last Name"
+          value={contact.lName}
+        />
+        <input
+          name="email"
+          onChange={handleChange}
+          placeholder="Email"
+          value={contact.email}
+        />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Notes**
+
+- The challenge focuses on using React state to manage a more complex object.
+- The use of the functional form of setContact ensures correct updates based on the previous state.
+- Connecting input values and displaying them in corresponding elements reinforces the concept of controlled components.
+
+**References**
+
+- [Changing Complex State Practice](https://codesandbox.io/p/sandbox/changing-complex-state-practice-8uqvh)
+  - [Solution](https://codesandbox.io/p/sandbox/changing-complex-state-practice-completed-73221)
