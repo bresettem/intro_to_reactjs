@@ -47,6 +47,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [312: Class Components vs. Functional Components](#312-class-components-vs-functional-components)
   - [313: Changing Complex State](#313-changing-complex-state)
   - [314: Changing Complex State Practice](#314-changing-complex-state-practice)
+  - [315: Javascript ES6 Spread Operator](#315-javascript-es6-spread-operator)
 
 ## 279: Introduction to JSX and Babel
 
@@ -2088,3 +2089,74 @@ export default App;
 
 - [Changing Complex State Practice](https://codesandbox.io/p/sandbox/changing-complex-state-practice-8uqvh)
   - [Solution](https://codesandbox.io/p/sandbox/changing-complex-state-practice-completed-73221)
+
+## 315: Javascript ES6 Spread Operator
+
+**Spread Operator Overview**
+
+The spread operator (`...`) in JavaScript can be used to expand elements from an iterable, like an array or an object, and insert them into another. This simplifies tasks like combining arrays or adding properties to objects.
+
+**Array Example:**
+
+```javascript
+const citrus = ["lime", "lemon", "orange"];
+const fruits = ["apple", "banana", "coconut", ...citrus];
+console.log(fruits);
+// Output: ['apple', 'banana', 'coconut', 'lime', 'lemon', 'orange']
+```
+
+**Object Example:**
+
+```javascript
+const fullName = { fName: "James", lName: "Bond" };
+const user = { ...fullName, id: 007, userName: "jamesbond007" };
+console.log(user);
+// Output: { fName: 'James', lName: 'Bond', id: 007, userName: 'jamesbond007' }
+```
+
+**Using Spread in React State Update**
+
+In React, the spread operator can simplify state updates. Example in handleChange function:
+
+```jsx
+const handleChange = (event) => {
+  const { name, value } = event.target;
+  setContact((prevContact) => ({
+    ...prevContact,
+    [name]: value,
+  }));
+};
+```
+
+**Note on Dynamic Object Keys:**
+When using a variable as an object key, use square brackets to evaluate the variable's value:
+
+```jsx
+const key = "dynamicKey";
+const obj = { [key]: "value" };
+console.log(obj);
+// Output: { dynamicKey: 'value' }
+```
+
+This syntax avoids creating a nested object with the key as a literal string.
+
+**Simplified Code Approach:**
+
+Consider the following concise syntax for handleChange:
+
+```jsx
+const handleChange = (event) =>
+  setContact((prevContact) => ({
+    ...prevContact,
+    [event.target.name]: event.target.value,
+  }));
+```
+
+This approach combines the spread operator with the arrow function's implicit return, reducing the lines of code.
+
+**References**
+
+- [ES6 Spread Operator](https://codesandbox.io/p/sandbox/es6-spread-operator-fuc1n)
+  - [Solution](https://codesandbox.io/p/sandbox/es6-spread-operator-completed-3w3pp)
+  - [JavaScript set object key by variable](https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable?noredirect=1&lq=1)
+  - [Spread syntax(...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
