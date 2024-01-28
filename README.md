@@ -48,6 +48,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [313: Changing Complex State](#313-changing-complex-state)
   - [314: Changing Complex State Practice](#314-changing-complex-state-practice)
   - [315: Javascript ES6 Spread Operator](#315-javascript-es6-spread-operator)
+  - [316: Javascript ES6 Spread Operator Practice](#316-javascript-es6-spread-operator-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -2160,3 +2161,123 @@ This approach combines the spread operator with the arrow function's implicit re
   - [Solution](https://codesandbox.io/p/sandbox/es6-spread-operator-completed-3w3pp)
   - [JavaScript set object key by variable](https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable?noredirect=1&lq=1)
   - [Spread syntax(...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+## 316: Javascript ES6 Spread Operator Practice
+
+**Challenge Solution: ToDo List App**
+
+**_Part 1: Tracking Input Text_**
+
+- Create state for tracking input text:
+  ```jsx
+  const [inputText, setInputText] = useState("");
+  ```
+- Connect input value to state:
+
+  ```jsx
+  <input onChange={handleChange} value={inputText} type="text" />;
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+  ```
+
+**_Part 2: Adding Items to ToDo List_**
+
+- Create state for ToDo items array:
+  ```jsx
+  const [items, setItems] = useState([]);
+  ```
+- Handle button click to add items:
+
+  ```html
+  <button onClick="{addItem}">Add</button>
+  ```
+
+- Implement addItem function:
+
+  ```javascript
+  function addItem() {
+    setItems((prevItems) => {
+      return [...prevItems, inputText];
+    });
+  }
+  ```
+
+**_Part 3: Displaying ToDo Items_**
+
+- Map through items to display them:
+  ```html
+  <ul>
+    {items.map((todoItem) => (
+    <li>{todoItem}</li>
+    ))}
+  </ul>
+  ```
+- Clear input after adding an item to the list.
+
+  ```jsx
+  setInputText("");
+  ```
+
+  **Note:**
+
+- Ensure proper handling of keys in mapping to avoid potential issues.
+  Use key prop in mapping to provide a unique identifier for each item.
+
+  ```html
+  <ul>
+    {items.map((todoItem, index) => (
+    <li key="{index}">{todoItem}</li>
+    ))}
+  </ul>
+  ```
+
+This solution demonstrates the use of React state to manage input text and ToDo items. It also covers
+handling events, updating state, and dynamically rendering elements based on state.
+
+**Complete Solution**
+
+```jsx
+import React, { useState } from "react";
+
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  function addItem() {
+    setItems((prevItems) => {
+      return [...prevItems, inputText];
+    });
+
+    setInputText("");
+  }
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input onChange={handleChange} value={inputText} type="text" />
+        <button onClick={addItem}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {items.map((todoItem, index) => {
+            return <li key={index}>{todoItem}</li>;
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+}
+export default App;
+```
