@@ -49,6 +49,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [314: Changing Complex State Practice](#314-changing-complex-state-practice)
   - [315: Javascript ES6 Spread Operator](#315-javascript-es6-spread-operator)
   - [316: Javascript ES6 Spread Operator Practice](#316-javascript-es6-spread-operator-practice)
+  - [317: Managing a Component Tree](#317-managing-a-component-tree)
 
 ## 279: Introduction to JSX and Babel
 
@@ -2281,3 +2282,189 @@ function App() {
 }
 export default App;
 ```
+
+**References**
+
+- [ES6 Spread Operator Practice](https://codesandbox.io/p/sandbox/es6-spread-operator-practice-qjpji)
+  - [Solution](https://codesandbox.io/p/sandbox/es6-spread-operator-practice-completed-ecbsk)
+
+## 317: Managing a Component Tree
+
+**Challenge Solution: ToDo List App**
+
+**Part 1: ToDoItem Component**
+
+- Import React in ToDoItem.jsx.
+- Create ToDoItem function component.
+- Return an <li> with text from props.
+- Export as default.
+
+```jsx
+// ToDoItem.jsx
+import React from "react";
+
+function ToDoItem(props) {
+  return <li>{props.text}</li>;
+}
+
+export default ToDoItem;
+```
+
+**Part 2: App Component Integration**
+
+- Import ToDoItem in App.jsx.
+- Replace <li> with <ToDoItem> in the map function.
+- Pass 'text' and 'onChecked' props to ToDoItem.
+
+```jsx
+// App.jsx
+import React, { useState } from "react";
+import ToDoItem from "./ToDoItem";
+
+function App() {
+  const [items, setItems] = useState([]);
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  function addItem(text) {
+    setItems((prevItems) => [...prevItems, text]);
+  }
+
+  return (
+    <div>
+      <input onChange={handleChange} type="text" value={inputText} />
+      <button onClick={addItem}>
+        <span>Add</span>
+      </button>
+      <ul>
+        {items.map((todoItem, index) => (
+          <ToDoItem key={index} id={index} text={todoItem} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Part 3: Styling in ToDoItem**
+
+- Add 'isDone' state to ToDoItem.
+- Handle onClick to toggle 'isDone'.
+- Use 'isDone' to conditionally apply line-through styling.
+
+```jsx
+// ToDoItem.jsx
+import React, { useState } from "react";
+
+function ToDoItem(props) {
+  const [isDone, setIsDone] = useState(false);
+
+  function handleClick() {
+    setIsDone((prevIsDone) => !prevIsDone);
+  }
+
+  return (
+    <li
+      style={{ textDecoration: isDone ? "line-through" : "none" }}
+      onClick={handleClick}
+    >
+      {props.text}
+    </li>
+  );
+}
+
+export default ToDoItem;
+```
+
+**Part 4: deleteItem Function**
+
+- Add 'deleteItem' function to App component.
+- Pass 'deleteItem' function as a prop to ToDoItem.
+- Complete Solution
+
+```jsx
+import React, { useState } from "react";
+import ToDoItem from "./ToDoItem";
+
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  function addItem() {
+    setItems((prevItems) => {
+      return [...prevItems, inputText];
+    });
+    setInputText("");
+  }
+
+  function deleteItem(id) {
+    setItems((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  }
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input onChange={handleChange} type="text" value={inputText} />
+        <button onClick={addItem}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {items.map((todoItem, index) => (
+            <ToDoItem
+              key={index}
+              id={index}
+              text={todoItem}
+              onChecked={deleteItem}
+            />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+// ToDoItem.jsx
+import React from "react";
+
+function ToDoItem(props) {
+  return (
+    <div
+      onClick={() => {
+        props.onChecked(props.id);
+      }}
+    >
+      <li>{props.text}</li>
+    </div>
+  );
+}
+
+export default ToDoItem;
+```
+
+**References**
+
+- [Managing a Component Tree Practice](https://codesandbox.io/p/sandbox/managing-a-component-tree-mm4qj)
+  - [Solution](https://codesandbox.io/p/sandbox/managing-a-component-tree-completed-cmb9l)
+- [CSS text-decoration Property](https://www.w3schools.com/cssref/pr_text_text-decoration.php)
+- [uuid NPM package](https://www.npmjs.com/package/uuid)
