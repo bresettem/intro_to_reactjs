@@ -7,7 +7,9 @@ function ToDoItem(props) {
         props.onChecked(props.id);
       }}
     >
-      <li>{props.text}</li>
+      <li key={props.id} id={props.id}>
+        {props.text}
+      </li>
     </div>
   );
 }
