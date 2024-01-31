@@ -50,6 +50,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [315: Javascript ES6 Spread Operator](#315-javascript-es6-spread-operator)
   - [316: Javascript ES6 Spread Operator Practice](#316-javascript-es6-spread-operator-practice)
   - [317: Managing a Component Tree](#317-managing-a-component-tree)
+  - [318: Managing a Component Tree Practice](#318-managing-a-component-tree-practice)
 
 ## 279: Introduction to JSX and Babel
 
@@ -2468,3 +2469,81 @@ export default ToDoItem;
   - [Solution](https://codesandbox.io/p/sandbox/managing-a-component-tree-completed-cmb9l)
 - [CSS text-decoration Property](https://www.w3schools.com/cssref/pr_text_text-decoration.php)
 - [uuid NPM package](https://www.npmjs.com/package/uuid)
+
+## 318: Managing a Component Tree Practice
+
+**Challenge Instructions: Refactoring with InputArea Component**
+
+- **Objective:** Your task is to make the app work as it did before, but this time with the `<input>` and `<button>` elements placed within a separate component named InputArea.
+
+- **Constraints:**
+
+  - Do not modify the `ToDoItem.jsx` file.
+  - Do not move the `<input>` and `<button>` elements back into the `App.jsx` file.
+
+- **Hints:**
+  1. Consider how to manage the state of the input element within `InputArea.jsx`.
+  2. Think about how to pass the input value back into the `addItem()` function in `App.jsx`.
+
+```jsx
+//InputArea.jsx
+import React, { useState } from "react";
+
+function InputArea(props) {
+  const [inputText, setInputText] = useState("");
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  return (
+    <div className="form">
+      <input onChange={handleChange} type="text" value={inputText} />
+      <button
+        onClick={() => {
+          props.onAdd(inputText);
+          setInputText("");
+        }}
+      >
+        <span>Add</span>
+      </button>
+    </div>
+  );
+}
+
+export default InputArea;
+
+// App.jsx
+import React, { useState } from "react";
+
+function InputArea(props) {
+  const [inputText, setInputText] = useState("");
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  return (
+    <div className="form">
+      <input onChange={handleChange} type="text" value={inputText} />
+      <button
+        onClick={() => {
+          props.onAdd(inputText);
+          setInputText("");
+        }}
+      >
+        <span>Add</span>
+      </button>
+    </div>
+  );
+}
+
+export default InputArea;
+```
+
+**References**
+
+- [Managing a Component Tree Practice](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17039614#notes)
+  - [Solution](https://codesandbox.io/p/sandbox/managing-a-component-tree-practice-completed-oe6y7)
