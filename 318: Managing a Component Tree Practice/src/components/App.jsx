@@ -19,7 +19,6 @@ function App() {
   const [items, setItems] = useState([]);
 
   function addItem(inputText) {
-    console.log("clicked add item");
     setItems((prevItems) => {
       return [...prevItems, inputText];
     });
