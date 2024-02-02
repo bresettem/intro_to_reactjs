@@ -5,12 +5,32 @@ This repository contains the course material for [The Complete 2024 Web Developm
 **Create React App(CRA) has been discontinued** It is recommended to use Next.js instead.
 
 React and ReactDOM have be updated to the latest version due to errors
-
 `npm i --save react@latest react-dom@latest`
+
+## `create-react-project.sh`
+
+This interactive Bash script streamlines the setup of a React project with the following features:
+
+- Validates and normalizes the provided directory name, enforcing naming conventions and length restrictions
+- Handles an interactive prompt for the directory name if none is provided
+- Creates 'public' and 'src/components' directories for project structure
+- Generates 'index.html', 'styles.css', 'App.jsx', and 'index.js' files to initiate project files
+- Sets up a basic React project with a dynamic HTML title in 'public/index.html'
+- Creates a 'package.json' file with predefined dependencies and scripts
+- Navigates to the created directory and installs project dependencies using npm
+
+Execution on Linux:
+
+1. Save the script into a file (e.g., 'create-react-project.sh').
+2. Make the script executable: 'chmod +x create-react-project.sh'.
+3. Run the script without arguments: './create-react-project.sh'.
+   Alternatively, provide a directory name as an argument: './create-react-project.sh "my_project"'.
+   Note: Ensure proper permissions and have Node.js/npm installed for execution.
 
 ## Table of Contents
 
 - [Intro to React.js](#intro-to-reactjs)
+  - [`create-react-project.sh`](#create-react-projectsh)
   - [Table of Contents](#table-of-contents)
   - [279: Introduction to JSX and Babel](#279-introduction-to-jsx-and-babel)
   - [280: JSX Code Practice](#280-jsx-code-practice)
