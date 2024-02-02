@@ -1,16 +1,17 @@
-## Intro to React.js
+# Intro to React.js
 
 This repository contains the course material for [The Complete 2024 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp). The course is divided into several sections, each of which is contained in a separate directory.
 
-**Create React App(CRA) has been discontinued and recommend using Next.js instead**
+**Create React App(CRA) has been discontinued** It is recommended to use Next.js instead.
 
-_React and ReactDOM have be updated to the latest version due to errors_
+React and ReactDOM have be updated to the latest version due to errors
 
 `npm i --save react@latest react-dom@latest`
 
-# Table of Contents
+## Table of Contents
 
-- [Table of Contents](#table-of-contents)
+- [Intro to React.js](#intro-to-reactjs)
+  - [Table of Contents](#table-of-contents)
   - [279: Introduction to JSX and Babel](#279-introduction-to-jsx-and-babel)
   - [280: JSX Code Practice](#280-jsx-code-practice)
   - [281: Javascript Expressions in JSX \& ES6 Template Literals](#281-javascript-expressions-in-jsx--es6-template-literals)
@@ -63,6 +64,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
 2. **Setting Up: JSX Introduction Sandbox**
 
    - In the `index.js` file, require React and ReactDOM.
+
      ```jsx
      import React from "react";
      import ReactDOM from "react-dom";
@@ -80,8 +82,10 @@ _React and ReactDOM have be updated to the latest version due to errors_
    - Import React and ReactDOM using the `import` statement for better modularization.
 
 5. **Rendering Multiple Elements with JSX**
+
    - ReactDOM's render method supports a single HTML element.
    - Wrap multiple elements within a single div for simultaneous rendering.
+
      ```jsx
      ReactDOM.render(
        <div>
@@ -91,10 +95,12 @@ _React and ReactDOM have be updated to the latest version due to errors_
        document.getElementById("root")
      );
      ```
+
 6. **Challenge: Rendering Multiple Elements**
 
    - Challenge to render an `<h2>` and two paragraphs inside a single div.
    - Utilize the concept of wrapping elements inside a div for efficient rendering.
+
      ```jsx
      ReactDOM.render(
        <div>
@@ -130,6 +136,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
 2. **Example: Rendering Lucky Number using JSX**
 
    - Use JSX expression to render the lucky number in a paragraph element.
+
      ```jsx
      const luckyNumber = 7;
      ReactDOM.render(
@@ -159,8 +166,10 @@ _React and ReactDOM have be updated to the latest version due to errors_
      ```
 
 4. **Practice: Inserting JavaScript Inside HTML**
+
    - Exercise to practice inserting JavaScript inside HTML using JSX.
    - Example:
+
      ```jsx
      const num = 7;
      ReactDOM.render(
@@ -219,11 +228,13 @@ _React and ReactDOM have be updated to the latest version due to errors_
 7. Apply styling from `styles.css` to React elements.
 
    - CSS in `styles.css`:
+
      ```css
      .heading {
        color: red;
      }
      ```
+
    - JSX Usage: `<h1 className="heading">Hello World!</h1>`
 
 8. Linter warnings can be addressed by adhering to best practices, such as adding `alt` text for images.
@@ -401,17 +412,17 @@ In this practice session, the goal was to separate the provided code into compon
 
 ## 289: Javascript ES6 Import, Export, and Modules Practice
 
-1. **Challenge Overview**
+**Challenge** Overview
 
-   - Task: Import functions from `calculator.js` to calculate numbers for display.
-   - Expected Result: Achieve the same display as shown in `Final.png` with calculated numbers.
+- Task: Import functions from `calculator.js` to calculate numbers for display.
+- Expected Result: Achieve the same display as shown in `Final.png` with calculated numbers.
 
-2. **Alternative Import Methods**
+1. **Alternative Import Methods**
 
    - Emphasis on understanding different import methods (separate imports vs. wildcard imports).
    - Encouragement to experiment with both methods to build confidence.
 
-3. **Closing Notes**
+2. **Closing Notes**
    - Reiteration of the importance of understanding import/export for future React development.
    - Invitation to join the next lesson on setting up a local environment for React development.
 
@@ -436,18 +447,25 @@ In this practice session, the goal was to separate the provided code into compon
 
    - Package: Introduce `npm-check-updates` as a tool to update dependency versions.
    - Installation:
+
      ```bash
      npm install -g npm-check-updates
      ```
+
    - Updating Dependencies:
+
      ```bash
      ncu -u
      ```
+
    - Installing Updated Versions:
+
      ```bash
      npm install
      ```
+
    - Starting the Project:
+
      ```bash
      npm start
      ```
@@ -583,7 +601,7 @@ In this practice session, the goal was to separate the provided code into compon
 
 ## 295: React Props
 
-**React Components and Props Overview**
+**React Components and Props** Overview
 
 In this lesson, we delved into the concept of React components and explored the usage of props to make components more dynamic and reusable.
 
@@ -616,7 +634,7 @@ In this lesson, we delved into the concept of React components and explored the 
 
 In this lesson, we applied our knowledge of React components and props to complete a series of challenges and build a contact list app. Let's walk through the solution step by step.
 
-**Step 1: Apply CSS Styles**
+**Step 1**: Apply CSS Styles
 
 - Reviewed the `styles.css` file to find appropriate class names.
 - Applied styles to `App.jsx` to match the desired appearance.
@@ -624,19 +642,19 @@ In this lesson, we applied our knowledge of React components and props to comple
   - Applied class "circle-image" for a circular avatar image.
   - Added class "info" to paragraphs for consistent styling.
 
-**Step 2: Extract Contact Card as a Reusable Component**
+**Step 2**: Extract Contact Card as a Reusable Component
 
 - Created a new file, `Card.jsx`, inside the components folder.
 - Extracted the contents of the contact card into the Card component.
 - Exported the Card component as the default export.
 
-**Step 3: Use Props to Render Default Beyonce Card**
+**Step 3**: Use Props to Render Default Card
 
 - In `App.jsx,` imported the Card component.
 - Passed custom data (name, image, tel, email) to the Card component as props.
 - Updated Card component to use props for dynamic content.
 
-**Step 4: Use contacts.js to Populate Cards**
+**Step 4**: Use contacts.js to Populate Cards
 
 - Use the provided contacts.js filled with an array of contact objects.
 - Exported the contacts array as the default export.
@@ -709,6 +727,7 @@ In this lesson, we explored the technique of mapping components in React to elim
 
 - Introduced the concept of passing a function into the `map` function to customize the creation of components.
 - Created the `createCard` function to generate Card components based on contact data.
+
   ```jsx
    function createCard(contact) {
       return (
@@ -749,7 +768,7 @@ In this lesson, we explored the technique of mapping components in React to elim
 
 ## 299: Mapping Data to Components Practice
 
-**React Challenge - Emoji Dictionary**
+**React Challenge** - Emoji Dictionary
 
 In this challenge, you were tasked with applying the knowledge of mapping components in React to create a beautiful emoji dictionary. Here's a summary of the key steps and solutions:
 
@@ -794,7 +813,7 @@ In this challenge, you were tasked with applying the knowledge of mapping compon
 - Extracted repeated structures into a separate component for better organization and reusability.
 - Used props to pass data dynamically and achieve a clean, efficient solution.
 
-**References**
+References
 
 - [Mapping Data to Components Practice](https://codesandbox.io/p/sandbox/mapping-components-practice-6fkfr)
   - [Solution](https://codesandbox.io/p/sandbox/mapping-components-practice-completed-37h04)
@@ -890,7 +909,7 @@ In this lesson, we delved into array functions in JavaScript, exploring the `map
 
 - Emphasized understanding over memorization for array functions.
 
-**References**
+References
 
 - [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
@@ -898,7 +917,6 @@ In this lesson, we delved into array functions in JavaScript, exploring the `map
 - [Find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 - [FindIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findindex)
 - [Substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Javascript ES6 Map/Filter/Reduce]()
 - [Map/Filter/Reduce Practice](https://codesandbox.io/p/sandbox/mapfilterreduce-h7sm6)
   - [Solution](https://codesandbox.io/p/sandbox/mapfilterreduce-completed-3sm6u)
 
@@ -1005,14 +1023,14 @@ In this session, we applied several concepts learned in previous lessons to enha
 
 - Encouraged viewers to review the code, complete the challenge, and prepare for upcoming lessons.
 
-**References**
+References
 
 - [Keeper App Part 2](https://codesandbox.io/p/sandbox/keeper-app-part-2-starting-b5w06?file=%2Fsrc%2Fnotes.js)
   - [Solution](https://codesandbox.io/p/sandbox/keeper-app-part-2-completed-4dr3p?file=%2Fsrc%2Fcomponents%2FApp.js%3A11%2C7-17%2C10)
 
 ## 303: React Conditional Rendering with the Ternary Operator & AND Operator
 
-**React Login Flow - Conditional Rendering**
+**React Login Flow** - Conditional Rendering
 
 In this lesson, we focused on creating a login flow in React and explored techniques for conditionally rendering different components based on user authentication status. Here's a summary of the key points covered:
 
@@ -1038,8 +1056,8 @@ In this lesson, we focused on creating a login flow in React and explored techni
 **5. Ternary Operator for Conditional Rendering:**
 
 - Introduced the ternary operator (`condition ? expr1 : expr2`) as an alternative to traditional `if-else` statements.
-  - ` CONDITION ? DO IF TRUE : DO IF FALSE`
-  - ` isCloudy === true ? bringUmbrella() : bringSunscreen()`
+  - `CONDITION ? DO IF TRUE : DO IF FALSE`
+  - `isCloudy === true ? bringUmbrella() : bringSunscreen()`
 - Showed how to use the ternary operator for inline conditional rendering based on the value of `isLoggedIn`.
 
 **6. Using the AND Operator:**
@@ -1069,7 +1087,7 @@ In this lesson, we focused on creating a login flow in React and explored techni
 
 - Encouraged viewers to apply the concepts learned in the next lesson's challenge.
 
-**References**
+References
 
 - [React Conditional Rendering](https://codesandbox.io/p/sandbox/conditional-rendering-yfdes?file=%2Fsrc%2Findex.js%3A6%2C1)
   - [Solution](https://codesandbox.io/p/sandbox/conditional-rendering-completed-ovu1v)
@@ -1252,11 +1270,13 @@ In this lesson, we focused on creating a login flow in React and explored techni
 
   - Replace the hardcoded value with the `useState` hook.
   - Destructure the array returned by `useState` to access the state value and update function.
+
     ```jsx
     // Destructuring Example
     const [red, green, blue] = [9, 132, 227];
     console.log(blue);
     ```
+
   - Initial value and update function are conventionally named (`count` and `setCount`).
 
 - **Updating State with Buttons:**
@@ -1301,7 +1321,7 @@ In this lesson, we focused on creating a login flow in React and explored techni
   - Explore and experiment with the provided code sandbox.
   - Look forward to the upcoming challenge in the next lesson.
 
-**References**
+References
 
 - [Use State Practice](https://codesandbox.io/p/sandbox/usestate-hook-wd3vs)
   - [Solution](https://codesandbox.io/p/sandbox/usestate-hook-completed-ylxqj)
@@ -1412,7 +1432,7 @@ In this lesson, we focused on creating a login flow in React and explored techni
   - Engage in additional challenges to solidify knowledge.
   - Stay curious and build more interactive React applications.
 
-**References**
+References
 
 - [useState Hook Practice](https://codesandbox.io/p/sandbox/usestate-hook-practice-k0g69)
   - [Solution](https://codesandbox.io/p/sandbox/usestate-hook-practice-completed-t99f4)
@@ -1441,14 +1461,17 @@ In this lesson, we focused on creating a login flow in React and explored techni
     - Alternative variable names using `:` syntax.
     - Default values for array items.
   - Destructuring Objects:
+
     - `const { prop1, prop2 } = object;`
     - Unique variable names matching object properties.
     - Alternative variable names using `:` syntax.
+
       ```jsx
       const { name, sound } = cat;
       const { name: catName, sound: catSound } = cat;
       console.log("catName", catName);
       ```
+
     - Default values for object properties.
     - Destructuring nested objects.
 
@@ -1494,7 +1517,7 @@ In this lesson, we focused on creating a login flow in React and explored techni
   - Provides concise syntax for working with arrays and objects.
   - Practice with destructuring enhances coding skills.
 
-**References**
+References
 
 - [ES6 Restructuring](https://codesandbox.io/p/sandbox/es6-destructuring-ide4v)
 - [Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
@@ -1532,7 +1555,7 @@ const {
 
 - Achieving the goal of rendering stats in a table without modifying existing code.
 
-**References**
+References
 
 - [ES6 Restructuring Solution](https://codesandbox.io/p/sandbox/es6-destructuring-completed-zvjn9)
 
@@ -1597,7 +1620,7 @@ const {
     export default App;
     ```
 
-**References**
+References
 
 - [Event Handling in React](https://codesandbox.io/p/sandbox/event-handling-in-react-2tltl)
   - [Solution](https://codesandbox.io/p/sandbox/event-handling-in-react-completed-61rti)
@@ -1627,23 +1650,25 @@ const {
    ```
 
 3. **Form Submission:**
+
    - Add an `onSubmit` event to the form, pointing to a function, e.g., `handleClick`.
+
    ```jsx
    <button type="submit" onClick={handleClick}>
      Submit
    </button>
    ```
 
-- In the `handleClick` function, prevent the default form submission behavior using `event.preventDefault()`.
+   - In the `handleClick` function, prevent the default form submission behavior using `event.preventDefault()`.
 
-  ```jsx
-  const [headingText, setHeading] = useState("");
+   ```jsx
+   const [headingText, setHeading] = useState("");
 
-  function handleClick(event) {
-    setHeading(name);
-    event.preventDefault();
-  }
-  ```
+   function handleClick(event) {
+     setHeading(name);
+     event.preventDefault();
+   }
+   ```
 
 4. **Updating Heading Text:**
 
@@ -1701,7 +1726,7 @@ const {
 - Clear separation of concerns with specific functions (`handleChange`, `handleClick`) for event handling.
 - Effective use of controlled components to manage input state.
 
-**References**
+References
 
 - [React Forms Practice](https://codesandbox.io/p/sandbox/react-forms-23oen)
   - [Solution](https://codesandbox.io/p/sandbox/react-forms-completed-4vy2h?file=%2Fsrc%2Fcomponents%2FApp.jsx%3A3%2C1-32%2C2)
@@ -1787,7 +1812,7 @@ export default FunctionalComponent;
 - Hooks can be used alongside classes, but the community is gradually adopting hooks for cleaner code.
 - Legacy code may still use class components, but newer projects tend to leverage hooks exclusively.
 
-**References**
+References
 
 - [State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
 - [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects)
@@ -1798,7 +1823,7 @@ export default FunctionalComponent;
 
 In this lesson, we explore ways to manage more complex state in React, specifically focusing on scenarios involving JavaScript objects. The goal is to create a form where user input (first name and last name) is stored in a stateful manner.
 
-**Challenge Overview**
+**Challenge** Overview
 
 - Start with a simple form with two inputs (first name and last name) and a submit button.
 
@@ -1815,7 +1840,7 @@ In this lesson, we explore ways to manage more complex state in React, specifica
   </div>
   ```
 
-  **Solution Approach**
+**Solution** Approach
 
 1. **Individual State for Each Input:**
 
@@ -1958,7 +1983,7 @@ export default App;
 
 - Remember: Avoid accessing the event directly inside stateful setters to prevent synthetic event issues.
 
-**Notes**
+Notes
 
 - The challenge demonstrates transitioning from managing individual input states to a more unified approach using a single state object.
 
@@ -1966,11 +1991,11 @@ export default App;
 
 - Understanding the limitations of synthetic events is crucial to avoid potential issues when updating state.
 
-**Conclusion**
+Conclusion
 
 Mastering state management in React involves choosing the appropriate strategy based on the complexity of the application. Handling more complex states with objects provides a scalable and maintainable solution.
 
-**References**
+References
 
 - [Changing Complex State Practice](https://codesandbox.io/p/sandbox/changing-complex-state-ruz1e)
   - [Solution](https://codesandbox.io/p/sandbox/changing-complex-state-completed-3hyn7)
@@ -1980,7 +2005,7 @@ Mastering state management in React involves choosing the appropriate strategy b
 
 In this challenge, the goal is to update the given React code to manage state for a contact object containing first name, last name, and email. The user should be able to type their information in three inputs, and the corresponding values should be displayed in the appropriate elements.
 
-**Challenge Overview**
+**Challenge** Overview
 
 - The `contact` state object contains properties: `fName`, `lName`, and `email`.
 
@@ -1990,7 +2015,7 @@ In this challenge, the goal is to update the given React code to manage state fo
 
 - Display the values in the respective elements: `<p>`, `<h2>`, and `<a>`.
 
-**Solution Approach**
+**Solution** Approach
 
 1. **Input Change Handling:**
 
@@ -2083,20 +2108,20 @@ function App() {
 export default App;
 ```
 
-**Notes**
+Notes
 
 - The challenge focuses on using React state to manage a more complex object.
 - The use of the functional form of setContact ensures correct updates based on the previous state.
 - Connecting input values and displaying them in corresponding elements reinforces the concept of controlled components.
 
-**References**
+References
 
 - [Changing Complex State Practice](https://codesandbox.io/p/sandbox/changing-complex-state-practice-8uqvh)
   - [Solution](https://codesandbox.io/p/sandbox/changing-complex-state-practice-completed-73221)
 
 ## 315: Javascript ES6 Spread Operator
 
-**Spread Operator Overview**
+**_Spread Operator_** Overview
 
 The spread operator (`...`) in JavaScript can be used to expand elements from an iterable, like an array or an object, and insert them into another. This simplifies tasks like combining arrays or adding properties to objects.
 
@@ -2113,12 +2138,12 @@ console.log(fruits);
 
 ```javascript
 const fullName = { fName: "James", lName: "Bond" };
-const user = { ...fullName, id: 007, userName: "jamesbond007" };
+const user = { ...fullName, id: 007, userName: "james-bond007" };
 console.log(user);
-// Output: { fName: 'James', lName: 'Bond', id: 007, userName: 'jamesbond007' }
+// Output: { fName: 'James', lName: 'Bond', id: 007, userName: 'james-bond007' }
 ```
 
-**Using Spread in React State Update**
+**Using Spread in React State**: Update
 
 In React, the spread operator can simplify state updates. Example in handleChange function:
 
@@ -2158,7 +2183,7 @@ const handleChange = (event) =>
 
 This approach combines the spread operator with the arrow function's implicit return, reducing the lines of code.
 
-**References**
+References
 
 - [ES6 Spread Operator](https://codesandbox.io/p/sandbox/es6-spread-operator-fuc1n)
   - [Solution](https://codesandbox.io/p/sandbox/es6-spread-operator-completed-3w3pp)
@@ -2167,14 +2192,16 @@ This approach combines the spread operator with the arrow function's implicit re
 
 ## 316: Javascript ES6 Spread Operator Practice
 
-**Challenge Solution: ToDo List App**
+**Challenge Solution**: ToDo List App
 
 **_Part 1: Tracking Input Text_**
 
 - Create state for tracking input text:
+
   ```jsx
   const [inputText, setInputText] = useState("");
   ```
+
 - Connect input value to state:
 
   ```jsx
@@ -2189,9 +2216,11 @@ This approach combines the spread operator with the arrow function's implicit re
 **_Part 2: Adding Items to ToDo List_**
 
 - Create state for ToDo items array:
+
   ```jsx
   const [items, setItems] = useState([]);
   ```
+
 - Handle button click to add items:
 
   ```html
@@ -2211,6 +2240,7 @@ This approach combines the spread operator with the arrow function's implicit re
 **_Part 3: Displaying ToDo Items_**
 
 - Map through items to display them:
+
   ```html
   <ul>
     {items.map((todoItem) => (
@@ -2218,6 +2248,7 @@ This approach combines the spread operator with the arrow function's implicit re
     ))}
   </ul>
   ```
+
 - Clear input after adding an item to the list.
 
   ```jsx
@@ -2237,10 +2268,9 @@ This approach combines the spread operator with the arrow function's implicit re
   </ul>
   ```
 
-This solution demonstrates the use of React state to manage input text and ToDo items. It also covers
-handling events, updating state, and dynamically rendering elements based on state.
+This solution demonstrates the use of React state to manage input text and ToDo items. It also covers handling events, updating state, and dynamically rendering elements based on state.
 
-**Complete Solution**
+Complete Solution
 
 ```jsx
 import React, { useState } from "react";
@@ -2285,20 +2315,20 @@ function App() {
 export default App;
 ```
 
-**References**
+References
 
 - [ES6 Spread Operator Practice](https://codesandbox.io/p/sandbox/es6-spread-operator-practice-qjpji)
   - [Solution](https://codesandbox.io/p/sandbox/es6-spread-operator-practice-completed-ecbsk)
 
 ## 317: Managing a Component Tree
 
-**Challenge Solution: ToDo List App**
+**Challenge Solution**: ToDo List App\*
 
-**Part 1: ToDoItem Component**
+**Part 1**: ToDoItem Component
 
 - Import React in ToDoItem.jsx.
 - Create ToDoItem function component.
-- Return an <li> with text from props.
+- Return an `<li>` with text from props.
 - Export as default.
 
 ```jsx
@@ -2312,10 +2342,10 @@ function ToDoItem(props) {
 export default ToDoItem;
 ```
 
-**Part 2: App Component Integration**
+**Part 2**: App Component Integration
 
-- Import ToDoItem in App.jsx.
-- Replace <li> with <ToDoItem> in the map function.
+- Import ToDoItem in `App.jsx`.
+- Replace `<li>` with `<ToDoItem>` in the map function.
 - Pass 'text' and 'onChecked' props to ToDoItem.
 
 ```jsx
@@ -2353,7 +2383,7 @@ function App() {
 export default App;
 ```
 
-**Part 3: Styling in ToDoItem**
+**Part 3**: Styling in ToDoItem
 
 - Add 'isDone' state to ToDoItem.
 - Handle onClick to toggle 'isDone'.
@@ -2383,7 +2413,7 @@ function ToDoItem(props) {
 export default ToDoItem;
 ```
 
-**Part 4: deleteItem Function**
+**Part 4**: deleteItem Function
 
 - Add 'deleteItem' function to App component.
 - Pass 'deleteItem' function as a prop to ToDoItem.
@@ -2464,7 +2494,7 @@ function ToDoItem(props) {
 export default ToDoItem;
 ```
 
-**References**
+References
 
 - [Managing a Component Tree Practice](https://codesandbox.io/p/sandbox/managing-a-component-tree-mm4qj)
   - [Solution](https://codesandbox.io/p/sandbox/managing-a-component-tree-completed-cmb9l)
@@ -2473,7 +2503,7 @@ export default ToDoItem;
 
 ## 318: Managing a Component Tree Practice
 
-**Challenge Instructions: Refactoring with InputArea Component**
+**Challenge Instructions**: Refactoring with InputArea Component
 
 - **Objective:** Your task is to make the app work as it did before, but this time with the `<input>` and `<button>` elements placed within a separate component named InputArea.
 
@@ -2563,18 +2593,16 @@ export default App;
 
 ```
 
-**References**
+References
 
 - [Managing a Component Tree Practice](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17039614#notes)
   - [Solution](https://codesandbox.io/p/sandbox/managing-a-component-tree-practice-completed-oe6y7)
 
 ## 319: Keeper App Project - Part 3
 
-**Objective**
-
 Implement add and delete note functionalities in the Keeper App.
 
-**Add Note Functionality**
+**Add Note** Functionality
 
 1. **State Management:**
 
@@ -2657,7 +2685,7 @@ Implement add and delete note functionalities in the Keeper App.
      }
      ```
 
-**Delete Note Functionality**
+**Delete Note** Functionality
 
 1. **Callback and Prop Passing:**
 
@@ -2708,6 +2736,7 @@ Implement add and delete note functionalities in the Keeper App.
 3. **Additional Step**
 
 - To clear the title and content inputs after adding a note, add the following line to the submitNote function:
+
   ```jsx
   setNote({
     title: "",
@@ -2715,11 +2744,11 @@ Implement add and delete note functionalities in the Keeper App.
   });
   ```
 
-**Conclusion**
+Conclusion
 
 The challenge involves implementing add and delete note functionalities in the Keeper App. The solution breaks down the steps, covering state management, handling changes, submitting notes, passing notes to the App component, adding a callback and prop for note deletion, and deleting notes in the App component.
 
-**References**
+References
 
 - [Keeper App Project Part 3](https://codesandbox.io/p/sandbox/keeper-part-3-starting-v3p0j)
 - [Solution](https://codesandbox.io/p/sandbox/keeper-part-3-completed-pogqj)
