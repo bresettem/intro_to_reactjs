@@ -51,6 +51,7 @@ _React and ReactDOM have be updated to the latest version due to errors_
   - [316: Javascript ES6 Spread Operator Practice](#316-javascript-es6-spread-operator-practice)
   - [317: Managing a Component Tree](#317-managing-a-component-tree)
   - [318: Managing a Component Tree Practice](#318-managing-a-component-tree-practice)
+  - [319: Keeper App Project - Part 3](#319-keeper-app-project---part-3)
 
 ## 279: Introduction to JSX and Babel
 
@@ -2566,3 +2567,159 @@ export default App;
 
 - [Managing a Component Tree Practice](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17039614#notes)
   - [Solution](https://codesandbox.io/p/sandbox/managing-a-component-tree-practice-completed-oe6y7)
+
+## 319: Keeper App Project - Part 3
+
+**Objective**
+
+Implement add and delete note functionalities in the Keeper App.
+
+**Add Note Functionality**
+
+1. **State Management:**
+
+   - Create a stateful constant to manage the title and content of the note in the `CreateArea` component.
+
+     ```jsx
+     const [note, setNote] = useState({
+       title: "",
+       content: "",
+     });
+     ```
+
+2. **Handle Change:**
+
+   - Add an `onChange` event to the input and textarea elements, calling a function `handleChange`.
+   - Add the `value` as well.
+
+     ```jsx
+     <input
+          onChange={handleChange}
+          value={note.title}
+          name="title"
+          placeholder="Title"
+        />
+      <textarea
+        onChange={handleChange}
+        value={note.content}
+        name="content"
+        placeholder="Take a note..."
+        rows="3"
+      />
+     ```
+
+   - Implement the `handleChange` function to update the corresponding property in the `note` state.
+
+     ```jsx
+     function handleChange(event) {
+       const { name, value } = event.target;
+       setNote(function (prevNote) {
+         return {
+           ...prevNote,
+           [name]: value,
+         };
+       });
+     }
+     ```
+
+3. **Submit Note:**
+
+   - Add an `onClick` event to the "Add" button, calling a function `submitNote`.
+
+     ```jsx
+     <button onClick={submitNote}>Add</button>
+     ```
+
+   - Implement the `submitNote` function to prevent the default form submission behavior, call the `onAdd` prop.
+
+     ```jsx
+     function submitNote(event) {
+       props.onAdd(note);
+       event.preventDefault();
+     }
+     ```
+
+4. **Pass Note to App Component:**
+
+   - Pass the `onAdd` prop to the `CreateArea` component in `App.jsx`.
+
+     ```jsx
+     <CreateArea onAdd={addNote} />
+     ```
+
+   - Implement the `addNote` function in `App.jsx` to update the `notes` state with the new note.
+
+     ```jsx
+     function addNote(newNote) {
+       setNotes(function (prevNotes) {
+         return [...prevNotes, newNote];
+       });
+     }
+     ```
+
+**Delete Note Functionality**
+
+1. **Callback and Prop Passing:**
+
+   - In the `Note` component, add an `onClick` event to the delete button, calling a function `handleClick`.
+
+     ```jsx
+     <button onClick={handleClick}>DELETE</button>
+     ```
+
+   - Implement the `handleClick` function to call the `onDelete` prop.
+
+     ```jsx
+     function handleClick() {
+       props.onDelete(props.id);
+     }
+     ```
+
+   - Pass the `onDelete` prop to the `Note` component in the `map` function in `App.jsx`.
+
+     ```jsx
+     notes.map((noteItem, index) => {
+       return (
+         <Note
+           key={index}
+           id={index}
+           title={noteItem.title}
+           content={noteItem.content}
+           onDelete={deleteNote}
+         />
+       );
+     });
+     ```
+
+2. **Delete Note in App Component:**
+
+   - Implement the `deleteNote` function in `App.jsx` to update the `notes` state by filtering out the note with the specified id.
+
+     ```jsx
+     function deleteNote(id) {
+       setNotes(function (prevNotes) {
+         return prevNotes.filter(function (noteItem, index) {
+           return index !== id;
+         });
+       });
+     }
+     ```
+
+3. **Additional Step**
+
+- To clear the title and content inputs after adding a note, add the following line to the submitNote function:
+  ```jsx
+  setNote({
+    title: "",
+    content: "",
+  });
+  ```
+
+**Conclusion**
+
+The challenge involves implementing add and delete note functionalities in the Keeper App. The solution breaks down the steps, covering state management, handling changes, submitting notes, passing notes to the App component, adding a callback and prop for note deletion, and deleting notes in the App component.
+
+**References**
+
+- [Keeper App Project Part 3](https://codesandbox.io/p/sandbox/keeper-part-3-starting-v3p0j)
+- [Solution](https://codesandbox.io/p/sandbox/keeper-part-3-completed-pogqj)
