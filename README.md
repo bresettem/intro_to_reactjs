@@ -75,6 +75,7 @@ Execution on Linux:
   - [319: Keeper App Project - Part 3](#319-keeper-app-project---part-3)
   - [320: React Dependencies \& Styling the Keeper App](#320-react-dependencies--styling-the-keeper-app)
   - [321: Tip from Angela - How to Build Your Own Product](#321-tip-from-angela---how-to-build-your-own-product)
+  - [322: Bonus React with Firebase](#322-bonus-react-with-firebase)
 
 ## 279: Introduction to JSX and Babel
 
@@ -2788,7 +2789,7 @@ Steps
 1. **Add Material-UI Dependency:**
 
    - Click on the "Add Dependency" button in your CodeSandbox.
-   - Search for and add both `@mui/icons-material` and `@mui/material`.
+   - Search for and `@mui/icons-material`, `@mui/material`, `@mui/icons-material`, `@emotion/react`, and `@emotion/styled`.
 
 2. **Integrate Delete Icon:**
 
@@ -2945,3 +2946,227 @@ References
 6. _Start Small, Get Feedback, Iterate, Succeed_
 
    By starting small, seeking user feedback, and iteratively improving your product, you set yourself on a path to success as an entrepreneur. Embrace the journey of building and refining your project, and remember that the initial simplicity can pave the way for future complexity.
+
+## 322: Bonus React with Firebase
+
+Using Firebase Realtime Database with React
+
+1. **Firebase Configuration**
+
+   1.1. Create a Firebase project:
+
+- Go to the [Firebase Console](https://console.firebase.google.com/).
+- Click on "Add project" and follow the steps to set up your project.
+
+  1.2. Add a Web App to your Firebase project:
+
+  - Inside your Firebase project, click on "Add app" (Web).
+  - Configure your app and click on "Register App."
+  - Copy the provided configuration object.
+
+    1.3. Create an `.env` file in your React app:
+
+    ```jsx
+    REACT_APP_FIREBASE_API_KEY=<your-api-key>
+    REACT_APP_FIREBASE_AUTH_DOMAIN=<your-auth-domain>
+    REACT_APP_FIREBASE_PROJECT_ID=<your-project-id>
+    REACT_APP_FIREBASE_STORAGE_BUCKET=<your-storage-bucket>
+    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<your-messaging-sender-id>
+    REACT_APP_FIREBASE_APP_ID=<your-app-id>
+    ```
+
+    1.4 **Firebase Realtime Database Setup**
+
+    1.5. Go to the Firebase Console.
+
+    1.6. Click on your project.
+
+    1.7. In the left menu, select "Database."
+
+    1.8. Click on "Create Database."
+
+    1.9. Choose "Start in test mode" (for now).
+
+    1.10. Click "Enable."
+
+    1.11. Update your security rules as needed.
+
+2 **Add firebaseConfig.js**
+
+```jsx
+// firebaseConfig.js
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+};
+
+const app = initializeApp(firebaseConfig);
+
+export default app;
+```
+
+3 **Update App.jsx**
+
+```jsx
+// App.jsx
+import React, { useEffect, useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import CreateArea from "./CreateArea";
+import "./firebaseConfig.js";
+
+import { getDatabase, ref, onValue, remove } from "firebase/database";
+
+function App() {
+  // State to hold the notes retrieved from Firebase
+  const [notes, setNotes] = useState([]);
+
+  // useEffect to fetch notes from Firebase when the component mounts
+  useEffect(() => {
+    const db = getDatabase();
+    const todoRef = ref(db, "ToDo");
+
+    onValue(todoRef, (snapshot) => {
+      const data = snapshot.val();
+
+      if (data) {
+        const todoArray = Object.keys(data).map((key) => ({
+          id: key,
+          title: data[key].title,
+          content: data[key].content,
+        }));
+
+        setNotes(todoArray);
+      }
+    });
+  }, []);
+
+  // Function to delete a note from Firebase and update the local state
+  async function deleteNote(id) {
+    const db = getDatabase();
+    const noteRef = ref(db, "ToDo/" + id);
+
+    try {
+      await remove(noteRef);
+      console.log("Note removed from Firebase successfully");
+    } catch (error) {
+      console.error("Error removing note from Firebase: ", error);
+    }
+
+    setNotes((prevNotes) => {
+      return prevNotes.filter((note) => {
+        return note.id !== id;
+      });
+    });
+  }
+
+  return (
+    <div>
+      <Header />
+      <CreateArea />
+      {notes.map((noteItem) => (
+        <Note
+          key={noteItem.id}
+          id={noteItem.id}
+          title={noteItem.title}
+          content={noteItem.content}
+          onDelete={deleteNote}
+        />
+      ))}
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
+```
+
+4 **Update `CreateArea.jsx`**
+
+```jsx
+// CreateArea.jsx
+import React, { useState } from "react";
+import Zoom from "@mui/material/Zoom";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import { getDatabase, ref, push, set } from "firebase/database";
+
+function CreateArea() {
+  const [note, setNote] = useState({
+    title: "",
+    content: "",
+  });
+
+  const [isExpanded, setExpanded] = useState(false);
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setNote((prevNote) => ({
+      ...prevNote,
+      [name]: value,
+    }));
+  }
+
+  async function submitNote(event) {
+    const db = getDatabase();
+    const todoRef = ref(db, "ToDo");
+
+    const newNoteRef = push(todoRef);
+    await set(newNoteRef, note);
+
+    setNote({
+      title: "",
+      content: "",
+    });
+    setExpanded(false);
+
+    event.preventDefault();
+  }
+
+  function expand() {
+    setExpanded(true);
+  }
+
+  return (
+    <div>
+      <form className="create-note" method="POST">
+        {isExpanded && (
+          <input
+            name="title"
+            onChange={handleChange}
+            value={note.title}
+            placeholder="Title"
+            autoFocus
+          />
+        )}
+
+        <textarea
+          name="content"
+          onChange={handleChange}
+          onClick={expand}
+          value={note.content}
+          placeholder="Take a note..."
+          rows={isExpanded ? 3 : 1}
+        />
+        <Zoom in={isExpanded && true}>
+          <Fab onClick={submitNote} color="primary" aria-label="add">
+            <AddIcon />
+          </Fab>
+        </Zoom>
+      </form>
+    </div>
+  );
+}
+
+export default CreateArea;
+```
+
+Now your React app is configured to use Firebase Realtime Database. The old local state management is replaced with Firebase real-time data fetching and updating.
