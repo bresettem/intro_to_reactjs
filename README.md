@@ -73,6 +73,7 @@ Execution on Linux:
   - [317: Managing a Component Tree](#317-managing-a-component-tree)
   - [318: Managing a Component Tree Practice](#318-managing-a-component-tree-practice)
   - [319: Keeper App Project - Part 3](#319-keeper-app-project---part-3)
+  - [320: React Dependencies \& Styling the Keeper App](#320-react-dependencies--styling-the-keeper-app)
 
 ## 279: Introduction to JSX and Babel
 
@@ -2772,3 +2773,146 @@ References
 
 - [Keeper App Project Part 3](https://codesandbox.io/p/sandbox/keeper-part-3-starting-v3p0j)
 - [Solution](https://codesandbox.io/p/sandbox/keeper-part-3-completed-pogqj)
+
+## 320: React Dependencies & Styling the Keeper App
+
+**Keeper App Project** - Part 4 Challenge
+
+Objective
+
+Enhance the appearance of the Keeper App by incorporating Material-UI components, icons, and styling. Additionally, implement conditional rendering for expanding features and integrate a background pattern.
+
+Steps
+
+1. **Add Material-UI Dependency:**
+
+   - Click on the "Add Dependency" button in your CodeSandbox.
+   - Search for and add both `@mui/icons-material` and `@mui/material`.
+
+2. **Integrate Delete Icon:**
+
+   - Import the `DeleteForever` icon from `@mui/icons-material` in the `Note` component.
+
+     ```jsx
+     import DeleteIcon from "@mui/icons-material/Delete";";
+     ```
+
+   - Replace the hardcoded delete text with the `DeleteForeverIcon` component.
+
+     ```jsx
+     <button onClick={handleClick}>
+       <DeleteIcon />
+     </button>
+     ```
+
+3. **Integrate Add Icon:**
+
+   - Search for a suitable add icon from the [Material Icons library](https://mui.com/material-ui/material-icons/).
+   - Import the chosen add icon from `@mui/icons-material/Add` in the `CreateArea` component.
+
+     ```jsx
+     import AddIcon from "@mui/icons-material/Add";
+     ```
+
+   - Replace the hardcoded "Add" text with the `AddIcon` component.
+
+     ```jsx
+     <AddIcon />
+     ```
+
+4. **Use Floating Action Button (FAB):**
+
+   - Import the `Fab` and `Zoom` components from `@mui/material` in the `CreateArea` component.
+
+     ```jsx
+     import Zoom from "@mui/material/Zoom";
+     import Fab from "@mui/material/Fab";
+     ```
+
+   - Wrap the `Fab` component with the `Zoom` component to add the zoom transition effect.
+
+     ```jsx
+     <Zoom in={true}>
+       <Fab onClick={submitNote} color="primary" aria-label="add">
+         <AddIcon />
+       </Fab>
+     </Zoom>
+     ```
+
+5. **Conditional Rendering for Expansion:**
+
+   - Create a state variable `isExpanded` using the `useState` hook.
+
+     ```jsx
+     const [isExpanded, setExpanded] = useState(false);
+     ```
+
+   - Implement the `expand` function to set `isExpanded` to `true` on clicking the text area.
+
+     ```jsx
+     function expand() {
+       setExpanded(true);
+     }
+     ```
+
+   - Use conditional rendering to display the title input and adjust the rows of the text area based on `isExpanded`.
+
+     ```jsx
+     {
+       isExpanded && (
+         <input
+           name="title"
+           onChange={handleChange}
+           value={note.title}
+           placeholder="Title"
+           autoFocus
+         />
+       );
+     }
+     <textarea
+       name="content"
+       value={note.content}
+       onChange={handleChange}
+       onClick={expand}
+       rows={isExpanded ? 3 : 1}
+       placeholder="Take a note..."
+     />;
+     ```
+
+   - Apply conditional rendering to the FAB for zooming in.
+
+     ```jsx
+     <Zoom in={isExpanded && true}>
+       <Fab onClick={submitNote} color="primary" aria-label="add">
+         <AddIcon />
+       </Fab>
+     </Zoom>
+     ```
+
+6. **Background Pattern:**
+
+   - Visit [transparenttextures.com](https://www.transparenttextures.com/) and select a pattern (e.g., cubes).
+   - Copy the URL of the pattern.
+   - In the `styles.css` file, add the background image to the `body` selector.
+
+     ```css
+     body {
+       background-color: #f5f5f5;
+       background-image: url("paste_the_copied_url_here");
+     }
+     ```
+
+Conclusion
+
+Enhance the Keeper App's appearance by incorporating Material-UI components, icons, and styling. Implement conditional rendering for expanding features and integrate a background pattern to achieve the desired visual effects.
+
+References
+
+- [Using Pre-Built React Components](https://codesandbox.io/p/sandbox/using-pre-built-react-components-s13gn)
+  - [Solution](https://codesandbox.io/p/sandbox/using-pre-built-react-components-completed-58bxk)
+- [Material UI Icons](https://www.npmjs.com/package/@material-ui/icons)
+- [Material UI Core](https://www.npmjs.com/package/@material-ui/core)
+- [Material UI Icons Documentation](https://material-ui.com/components/icons/)
+- [Material UI Floating Action Buttons](https://material-ui.com/components/buttons/#floating-action-buttons)
+- [Zoom Component Docs](https://material-ui.com/api/zoom/)
+- [Transparent Textures](https://www.transparenttextures.com/)

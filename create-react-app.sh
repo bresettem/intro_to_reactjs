@@ -44,7 +44,7 @@ normalize_and_validate_directory_name() {
   name=$(echo "$name" | tr -cd '[:print:]')
 
   # Allow upper and lower case, dashes, underscores, numbers, spaces, and colon
-  normalized_directory_name=$(echo "$name" | tr -c '[:alnum:]_ :-' '-' | tr -s '-')
+  normalized_directory_name=$(echo "$name" | tr -c '[:alnum:]_ :&-' '-' | tr -s '-')
 
   # Ensure the name length is within limits
   if [ ${#normalized_directory_name} -gt $MAX_NAME_LENGTH ]; then
